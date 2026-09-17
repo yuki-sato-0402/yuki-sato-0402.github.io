@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuki Sato | Portfolio - Music × Technology (DSP, JUCE, AI)</title>
+  
+  <meta name="description" content="Yuki Sato の就活用ポートフォリオサイト。「音楽 × 技術」を一貫したテーマに、C++/JUCEによるVST3/AUプラグイン開発、音響信号処理(DSP)、RAVEやGANSynth等の深層学習音響合成モデルのリアルタイム実装を手掛けています。" />
+  <meta property="og:title" content="Yuki Sato | Portfolio - Music × Technology" />
+  <meta property="og:description" content="音響信号処理 (DSP) × 機械学習 (Neural Audio) × オーディオプラグイン開発 (C++ / JUCE)。一貫した「音楽 × 技術」の制作プロジェクト集。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yuki-sato-0402.github.io/" />
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow Background -->
+  <div class="bg-glow"></div>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="nav-brand">
+        <span>Yuki Sato</span>
+        <span class="brand-badge">Music × Tech</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#other-projects-section">All Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <a href="https://github.com/yuki-sato-0402" target="_blank" rel="noopener noreferrer" class="nav-github-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub Profile
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tagline">
+        <span>⚡ Audio Software &amp; Neural Audio Portfolio</span>
+      </div>
+      <h1 class="hero-title">
+        Bridging <span class="gradient-text">Music &amp; Technology</span>
+      </h1>
+      <p class="hero-desc">
+        一貫して「音楽 × 技術」をテーマに、<strong>音響信号処理 (DSP)</strong>、<strong>オーディオプラグイン開発 (C++ / JUCE / RNBO)</strong>、そして <strong>深層学習 (RAVE, GANSynth, LSTM) のリアルタイム推論</strong> を自ら設計・実装してきました。音響数理からハードウェア連携まで、実際のDAWや楽器演奏で機能する実践的ソフトウェアを開発しています。
+      </p>
+
+      <div class="hero-meta">
+        <div class="meta-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Japan
+        </div>
+        <div class="meta-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+          C++ / JUCE / Python / RNBO
+        </div>
+        <div class="meta-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          16 Audio Projects (VST3 / AU)
+        </div>
+      </div>
+
+      <!-- Recruiter Highlights Card -->
+      <div class="recruiter-card">
+        <div class="recruiter-header">
+          <span class="recruiter-badge">Recruiter's Guide</span>
+          <h2 class="recruiter-title">採用担当者様へ：私が作れるもの・技術的強み</h2>
+        </div>
+        <div class="recruiter-grid">
+          <div class="recruiter-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              C++ / JUCE 実装力
+            </h4>
+            <p>
+              DAW規格（VST3 / AU / Standalone）に完全準拠したプラグインを開発。リアルタイム制約（オーディオスレッド内でのメモリ確保回避等）やGUIパラメータ管理（APVTS）を熟知しています。
+            </p>
+          </div>
+          <div class="recruiter-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+              AI × リアルタイム音響合成
+            </h4>
+            <p>
+              RAVE (TorchScript) や GANSynth (ONNX) などの最新深層学習モデルを、C++ネイティブ音響エンジン（anira等）へ移植。複素数iFFT等の演算制約をDSP数学と事前計算で解決します。
+            </p>
+          </div>
+          <div class="recruiter-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h5l3 7 4-14 3 7h5"/></svg>
+              音響数理 &amp; ハードウェア連携
+            </h4>
+            <p>
+              FFT・Constant-Qフィルタバンク・非対称サチュレーション等の数理DSP設計から、Raspberry Pi Pico（SysEx双方向通信）による実機ノブ操作まで、ソフトと物理をつなぐ実装が可能です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-section">
+        <div class="filter-label">Filter by Technology</div>
+        <div class="tag-filter-list">
+          <button class="filter-btn active" data-filter="all">All Projects <span class="count">15</span></button>
+          <button class="filter-btn" data-filter="featured">⭐️ Featured <span class="count">4</span></button>
+          <button class="filter-btn" data-filter="dsp">[ DSP ]</button>
+          <button class="filter-btn" data-filter="juce">[ JUCE ]</button>
+          <button class="filter-btn" data-filter="cpp">[ C++ ]</button>
+          <button class="filter-btn" data-filter="ai">[ Deep Learning / AI ]</button>
+          <button class="filter-btn" data-filter="rnbo">[ RNBO ]</button>
+          <button class="filter-btn" data-filter="python">[ Python ]</button>
+          <button class="filter-btn" data-filter="hardware">[ Hardware ]</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="section" id="featured">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Core Achievements</span>
+          <h2 class="section-title">Featured Projects (代表作4選)</h2>
+        </div>
+        <a href="#other-projects-section" class="view-all-link" onclick="scrollToAllProjects()">
+          View all 15 projects →
+        </a>
+      </div>
+
+      <div class="featured-grid" id="featured-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Other Projects Section -->
+  <section class="section" id="other-projects-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Archive &amp; Experiments</span>
+          <h2 class="section-title">All Works (全15プロジェクト)</h2>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">
+          Total 15 Repositories
+        </div>
+      </div>
+
+      <div class="other-grid" id="other-container">
+        <!-- Rendered via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Domain Section -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Technical Competence</span>
+          <h2 class="section-title">Skills &amp; Technology Stack</h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"/></svg>
+            Languages &amp; Core
+          </h3>
+          <ul class="skill-items">
+            <li><strong>C++ (Modern C++17/20)</strong>: JUCE, ポインタ/メモリ管理, リアルタイム並行処理</li>
+            <li><strong>Python 3</strong>: 深層学習・PyTorch・データセット作成</li>
+            <li><strong>Max/MSP &amp; gen~</strong>: 音響数理プロトタイピング</li>
+            <li><strong>C</strong>: マイクロコントローラ (RP2040)</li>
+            <li><strong>CMake</strong>: クロスプラットフォームビルド設定</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
+            Frameworks &amp; Audio
+          </h3>
+          <ul class="skill-items">
+            <li><strong>JUCE Framework</strong>: VST3/AU/Standalone, APVTS, AudioProcessorGraph</li>
+            <li><strong>RNBO (Cycling '74)</strong>: gen~からのC++エクスポートとプラグイン統合</li>
+            <li><strong>anira</strong>: 深層学習モデルの低レイテンシーJUCE統合</li>
+            <li><strong>ONNX Runtime / LibTorch</strong>: C++ネイティブでのモデル推論</li>
+            <li><strong>MIDI Protocol</strong>: SysExメッセージ, クロック同期, MPE</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h5l3 7 4-14 3 7h5"/></svg>
+            DSP &amp; Acoustics
+          </h3>
+          <ul class="skill-items">
+            <li><strong>スペクトル解析</strong>: FFT, STFT, 位相差スペクトログラム</li>
+            <li><strong>フィルタバンク</strong>: Constant-Q (88鍵音高検出), Goertzel</li>
+            <li><strong>音響合成</strong>: 加算合成 (Additive), グラニュラー合成</li>
+            <li><strong>非線形音響</strong>: Wavefolding, 磁気ヒステリシス, 非対称歪み</li>
+            <li><strong>空間音響</strong>: シュレーダー・リバーブ (Comb/All-Pass)</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            Machine Learning &amp; HW
+          </h3>
+          <ul class="skill-items">
+            <li><strong>RAVE (IRCAM)</strong>: TorchScriptモデルのリアルタイム推論</li>
+            <li><strong>GANSynth / GAN</strong>: Mel-to-Linear逆変換ハイブリッド実装</li>
+            <li><strong>LSTM</strong>: 音楽理論（和声度数）を条件付けしたメロディ生成</li>
+            <li><strong>CNN</strong>: 音声ピッチ検出・MIDI自動採譜</li>
+            <li><strong>Raspberry Pi Pico</strong>: USB MIDI SysEx双方向ハードウェア連携</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-subtitle">Philosophy</span>
+          <h2 class="section-title">About Me</h2>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px; max-width: 860px; margin: 0 auto; line-height: 1.8; color: #cbd5e1;">
+        <h3 style="color: #fff; font-size: 1.25rem; margin-bottom: 14px;">「音楽 × 技術」を貫くエンジニアリング</h3>
+        <p style="margin-bottom: 16px;">
+          私はこれまで、一貫して<strong>「音楽の演奏・制作体験をテクノロジーでいかに拡張できるか」</strong>を探究し、15本以上の音響プロジェクトを個人開発してきました。
+        </p>
+        <p style="margin-bottom: 16px;">
+          単に既存のライブラリを組み合わせるだけでなく、<strong>「なぜこの数理モデルで音が変化するのか」</strong>という音響物理・信号処理（DSP）の根本原理や、<strong>「どうすれば演奏者が違和感なくリアルタイムで弾けるか」</strong>という低遅延アーキテクチャの設計を徹底して追求しています。
+        </p>
+        <p>
+          IRCAMのRAVEモデルやMagentaのGANSynthなどの最先端ニューラル音響モデルを、C++ネイティブ環境（JUCE / anira / ONNX Runtime）でプラグイン化する実装力、そしてRaspberry Pi Picoによるフィジカルハードウェア連携まで、<strong>「理論（数理・AI）を実際のプロダクト（C++ / DAWプラグイン / 実機）へ昇華させる力」</strong>を発揮し、音楽・音響ソフトウェアの未来を切り拓く開発に貢献したいと考えています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Modal -->
+  <div class="modal-overlay" id="video-modal" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title" id="modal-title">Demonstration Video</span>
+        <button class="modal-close" id="modal-close" aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-video-container">
+        <iframe id="modal-iframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="https://github.com/yuki-sato-0402" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+        <a href="#featured">Featured Projects</a>
+        <a href="#other-projects-section">All 15 Projects</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Yuki Sato. Hosted on GitHub Pages. Built with C++, JUCE, RNBO &amp; Deep Learning.
+      </div>
+    </div>
+  </footer>
+
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
