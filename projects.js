@@ -105,17 +105,6 @@ const otherProjects = [
     summary: "JUCE製プラグインのパラメータ名・現在値文字列・範囲情報をSysExでRaspberry Pi Picoへ送信し、実機ノブとプラグインUIを双方向リアルタイム同期。ハードウェアとDAWの融合を実現。"
   },
   {
-    id: "juce-audioprocessorgraph",
-    title: "JUCE AudioProcessorGraph Test",
-    subtitle: "D&Dでエフェクト順を動的再構成できるモジュラーラック",
-    tags: ["JUCE(C++)", "DSP"],
-    github: "https://github.com/yuki-sato-0402/JUCE_AudioProcessorGraph_Test",
-    youtube: "https://youtu.be/x_wckmZKYtE",
-    image: "https://github.com/user-attachments/assets/dfc0973a-52e4-422d-8632-7ecf138f19c3",
-    format: "JUCE App",
-    summary: "JUCEのAudioProcessorGraphを活用し、FIRフィルタ、ディレイ、リバーブ、コンプレッサーのDSPスロットをドラッグ＆ドロップで自在に並び替え・ルーティング可能な柔軟なアーキテクチャ。"
-  },
-  {
     id: "rnbo-fourier-expansion",
     title: "RNBO Fourier Expansion Synth",
     subtitle: "フーリエ級数展開の次数・非対称性を可変制御する加算合成シンセ",
@@ -128,16 +117,16 @@ const otherProjects = [
     summary: "矩形波・三角波・ノコギリ波のフーリエ級数近似式に基づき、合成に用いる正弦波の項数を連続可変。正負の半波でパラメータを独立制御し、独自の非対称波形と倍音を創出。"
   },
   {
-    id: "juce-ringmod-sidechain",
-    title: "JUCE RingMod Sidechain Plus",
-    subtitle: "サイドチェーン入力＆フィードバックフィルタ搭載リングモジュレーター",
-    tags: ["JUCE(C++)", "DSP"],
-    github: "https://github.com/yuki-sato-0402/JUCE_RingModSidechain_plus",
-    youtube: "https://youtu.be/vp6g_kOnx8Y",
-    download: "https://github.com/yuki-sato-0402/JUCE_RingModSidechain_plus/releases/tag/v1.0.0",
-    image: "https://github.com/user-attachments/assets/3195d5af-96ba-4db5-9a66-fdd2502d9490",
-    format: "VST3 / AU / Standalone",
-    summary: "外部サイドチェーントラック信号と入力信号の乗算に加え、クリッピング振幅制御や1ポールフィルタのフィードバック係数を調整可能にした実験的リングモジュレーションエフェクト。"
+    id: "juce-metric-tap",
+    title: "JUCE MetricTap App",
+    subtitle: "変拍子・メトリックモジュレーション DAWステップ入力ツール",
+    tags: ["JUCE(C++)"],
+    github: "https://github.com/yuki-sato-0402/JUCE_MetricTap_app",
+    youtube: "https://youtu.be/oC1avGWmFBY",
+    download: "https://github.com/yuki-sato-0402/JUCE_MetricTap_app/releases/tag/v1.0.0",
+    image: "https://github.com/user-attachments/assets/6cfdbf88-8dbc-4be4-b5bb-69644283e416",
+    format: "Standalone Application",
+    summary: "現代音楽やプログレッシブ音楽で用いられるメトリック・モジュレーション（比率リズム）をDAWへ直感的にステップ入力できるMIDIリズムジェネレーター。"
   },
   {
     id: "rnbo-comb-grain",
@@ -164,6 +153,18 @@ const otherProjects = [
     summary: "tanh~/atan~による非対称クリッピング、閾値超過成分を折り返すWavefolding、磁気テープ特有の方向依存記憶（ヒステリシス）を組み込んだ有機的サチュレーション。"
   },
   {
+    id: "juce-ringmod-sidechain",
+    title: "JUCE RingMod Sidechain Plus",
+    subtitle: "サイドチェーン入力＆フィードバックフィルタ搭載リングモジュレーター",
+    tags: ["JUCE(C++)", "DSP"],
+    github: "https://github.com/yuki-sato-0402/JUCE_RingModSidechain_plus",
+    youtube: "https://youtu.be/vp6g_kOnx8Y",
+    download: "https://github.com/yuki-sato-0402/JUCE_RingModSidechain_plus/releases/tag/v1.0.0",
+    image: "https://github.com/user-attachments/assets/3195d5af-96ba-4db5-9a66-fdd2502d9490",
+    format: "VST3 / AU / Standalone",
+    summary: "外部サイドチェーントラック信号と入力信号の乗算に加え、クリッピング振幅制御や1ポールフィルタのフィードバック係数を調整可能にした実験的リングモジュレーションエフェクト。"
+  },
+  {
     id: "rnbo-schroeder-reverb",
     title: "RNBO Schroeder Reverb",
     subtitle: "歴史的音響理論に基づくシュレーダー・リバーブ・プラグイン",
@@ -188,18 +189,6 @@ const otherProjects = [
     summary: "FFTの1フレーム（1024サンプル）に対応する周波数窓（86Hz）を三角波やノコギリ波でスペクトル乗算・変調。周波数軸上での形状スカルプトによる前衛的な倍音変調。"
   },
   {
-    id: "juce-metric-tap",
-    title: "JUCE MetricTap App",
-    subtitle: "変拍子・メトリックモジュレーション DAWステップ入力ツール",
-    tags: ["JUCE(C++)"],
-    github: "https://github.com/yuki-sato-0402/JUCE_MetricTap_app",
-    youtube: "https://youtu.be/oC1avGWmFBY",
-    download: "https://github.com/yuki-sato-0402/JUCE_MetricTap_app/releases/tag/v1.0.0",
-    image: "https://github.com/user-attachments/assets/6cfdbf88-8dbc-4be4-b5bb-69644283e416",
-    format: "Standalone Application",
-    summary: "現代音楽やプログレッシブ音楽で用いられるメトリック・モジュレーション（比率リズム）をDAWへ直感的にステップ入力できるMIDIリズムジェネレーター。"
-  },
-  {
     id: "dcgan-synthesizer",
     title: "DCGAN Synthesizer",
     subtitle: "GM音源を学習素材とするDCGANベースの音響生成システム",
@@ -221,7 +210,18 @@ const otherProjects = [
     image: "https://github.com/user-attachments/assets/cab47308-7033-4dbc-a25b-cdf88b3e16ac",
     format: "Colab / PyTorch",
     summary: "SoundFontとFluidSynthで訓練用サックス音声を自動合成。単音メロディ音声の音高を88鍵（MIDI 21〜108）へフレーム単位で推論分類し、MIDIデータへ自動採譜・変換。"
-  }
+  },
+  {
+  id: "juce-audioprocessorgraph",
+  title: "JUCE AudioProcessorGraph Test",
+  subtitle: "D&Dでエフェクト順を動的再構成できるモジュラーラック",
+  tags: ["JUCE(C++)", "DSP"],
+  github: "https://github.com/yuki-sato-0402/JUCE_AudioProcessorGraph_Test",
+  youtube: "https://youtu.be/x_wckmZKYtE",
+  image: "https://github.com/user-attachments/assets/dfc0973a-52e4-422d-8632-7ecf138f19c3",
+  format: "JUCE App",
+  summary: "JUCEのAudioProcessorGraphを活用し、FIRフィルタ、ディレイ、リバーブ、コンプレッサーのDSPスロットをドラッグ＆ドロップで自在に並び替え・ルーティング可能な柔軟なアーキテクチャ。"
+}
 ];
 
 // All 16 projects combined

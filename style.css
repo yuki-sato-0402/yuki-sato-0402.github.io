@@ -853,14 +853,43 @@ a {
 .skill-items li {
   font-size: 0.85rem;
   color: var(--text-muted);
-  display: flex;
-  align-items: flex-start;
-  gap: 6px;
-  line-height: 1.4;
+  display: block;
+  line-height: 1.55;
+  margin-bottom: 6px;
 }
 
 .skill-items li strong {
   color: #f1f5f9;
+}
+
+.skill-video-links {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.skill-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.skill-video-btn:hover {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fff;
+  border-color: rgba(239, 68, 68, 0.6);
+  transform: translateY(-1px);
 }
 
 /* Footer */

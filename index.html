@@ -172,28 +172,14 @@
         <div class="skill-category">
           <h3 class="skill-category-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16.5 9.4 7.55 4.24a1.78 1.78 0 0 0-2.5 1.55v12.42a1.78 1.78 0 0 0 2.5 1.55L16.5 14.6a1.78 1.78 0 0 0 0-3.2z"/></svg>
-            Languages &amp; Core
+            Languages &amp; Frameworks
           </h3>
           <ul class="skill-items">
-            <li><strong>C++ (Modern C++17/20)</strong>: JUCE, ポインタ/メモリ管理, リアルタイム並行処理</li>
-            <li><strong>Python 3</strong>: 深層学習・PyTorch・データセット作成</li>
-            <li><strong>Max/MSP &amp; gen~</strong>: 音響数理プロトタイピング</li>
-            <li><strong>C</strong>: マイクロコントローラ (RP2040)</li>
-            <li><strong>CMake</strong>: クロスプラットフォームビルド設定</li>
-          </ul>
-        </div>
-
-        <div class="skill-category">
-          <h3 class="skill-category-title">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 8h6"/><path d="M9 12h6"/><path d="M9 16h6"/></svg>
-            Frameworks &amp; Audio
-          </h3>
-          <ul class="skill-items">
-            <li><strong>JUCE Framework</strong>: VST3/AU/Standalone, APVTS, AudioProcessorGraph</li>
-            <li><strong>Max Msp(RNBO)</strong>: gen~からのC++エクスポートとプラグイン統合</li>
-            <li><strong>anira</strong>: 深層学習モデルの低レイテンシーJUCE統合</li>
-            <li><strong>ONNX Runtime / LibTorch</strong>: C++ネイティブでのモデル推論</li>
-            <li><strong>MIDI Protocol</strong>: SysExメッセージ, クロック同期, MPE</li>
+            <li><strong>C++ (JUCE)</strong>: VST3 / AU / Standalone プラグイン開発、リアルタイムオーディオスレッド制約、APVTSによるパラメータ管理</li>
+            <li><strong>Python</strong>: 機械学習モデル開発・データセット作成・音響信号前処理パイプライン</li>
+            <li><strong>ONNX (ONNX Runtime)</strong>: 学習済みモデルのC++ネイティブ推論統合</li>
+            <li><strong>anira</strong>: オーディオアプリケーション内でニューラルネットワーク推論を簡単かつ安全にリアルタイムに統合できるように設計された高性能ライブラリ（※RAVE for MIDI Synthesizerでのみ使用）</li>
+            <li><strong>Max/MSP (RNBO)</strong>: Max/MSPのgen~でDSP開発・音響デザインを行い、RNBOというアドオン機能を使ってC++エクスポートを行う</li>
           </ul>
         </div>
 
@@ -203,25 +189,35 @@
             DSP &amp; Acoustics
           </h3>
           <ul class="skill-items">
-            <li><strong>スペクトル解析</strong>: FFT, STFT, 位相差スペクトログラム</li>
-            <li><strong>フィルタバンク</strong>: Constant-Q (88鍵音高検出), Goertzel</li>
-            <li><strong>音響合成</strong>: 加算合成 (Additive), グラニュラー合成</li>
-            <li><strong>非線形音響</strong>: Wavefolding, 磁気ヒステリシス, 非対称歪み</li>
-            <li><strong>空間音響</strong>: シュレーダー・リバーブ (Comb/All-Pass)</li>
+            <li><strong>スペクトル解析</strong>: FFTでは前後フレームの位相差から瞬時周波数を検出</li>
+            <li><strong>フィルタバンク</strong>: 定Q（Constant-Q）フィルタバンクを用いた鍵盤単位でのエネルギー検出</li>
+            <li><strong>音響合成</strong>: フーリエ級数展開を用いた、サイン波の集合による三角波や矩形波、ノコギリ波の再現／グラニュラー合成</li>
+            <li><strong>非線形音響</strong>: 信号の上昇・下降に応じてフィードバック係数を動的に変更する非対称歪み・Wavefolding</li>
+            <li><strong>空間音響</strong>: シュレーダー・リバーブ（並列コムフィルタ＋直列オールパスフィルタ）</li>
+            <li>
+              <strong>数理実装デモ (YouTube)</strong>: gen~環境でFIR filterやマクローリン展開を実装した様子を公開中
+              <div class="skill-video-links">
+                <button type="button" class="skill-video-btn" onclick="openVideoModal('https://youtu.be/CGfOd3KLMUg', 'gen~ FIR filter 実装')">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> FIR filter 実装
+                </button>
+                <button type="button" class="skill-video-btn" onclick="openVideoModal('https://youtu.be/uNid_z_aXJI', 'gen~ マクローリン展開 実装')">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> マクローリン展開 実装
+                </button>
+              </div>
+            </li>
           </ul>
         </div>
 
         <div class="skill-category">
           <h3 class="skill-category-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
-            Machine Learning &amp; HW
+            Machine Learning
           </h3>
           <ul class="skill-items">
-            <li><strong>RAVE (IRCAM)</strong>: TorchScriptモデルのリアルタイム推論</li>
-            <li><strong>GANSynth / GAN</strong>: Mel-to-Linear逆変換ハイブリッド実装</li>
-            <li><strong>LSTM</strong>: 音楽理論（和声度数）を条件付けしたメロディ生成</li>
-            <li><strong>CNN</strong>: 音声ピッチ検出・MIDI自動採譜</li>
-            <li><strong>Raspberry Pi Pico</strong>: USB MIDI SysEx双方向ハードウェア連携</li>
+            <li><strong>RAVE (IRCAM)</strong>: VAE（変分オートエンコーダー）をベースとしたリアルタイム音響モデルのTorchScript推論</li>
+            <li><strong>GANSynth (Magenta)</strong>: GAN（敵対的生成ネットワーク）をベースとした音響合成モデルのONNX推論 &amp; Mel-to-Linear逆変換ハイブリッド実装</li>
+            <li><strong>LSTM</strong>: 音楽理論（和声度数）を条件付け情報として埋め込んだメロディ生成・DAW同期セッション</li>
+            <li><strong>CNN</strong>: 音声ピッチ検出・88鍵音高クラス分類によるMIDI自動採譜</li>
           </ul>
         </div>
       </div>
@@ -247,7 +243,7 @@
           単に既存のライブラリを組み合わせるだけでなく、<strong>「なぜこの数理モデルで音が変化するのか」</strong>という音響物理・信号処理（DSP）の根本原理や、<strong>「どうすれば演奏者が違和感なくリアルタイムで弾けるか」</strong>という低遅延アーキテクチャの設計を徹底して追求しています。
         </p>
         <p>
-          IRCAMのRAVEモデルやMagentaのGANSynthなどの最先端ニューラル音響モデルを、C++ネイティブ環境（JUCE / anira / ONNX Runtime）でプラグイン化する実装力、そしてRaspberry Pi Picoによるフィジカルハードウェア連携まで、<strong>「理論（数理・AI）を実際のプロダクト（C++ / DAWプラグイン / 実機）へ昇華させる力」</strong>を発揮し、音楽・音響ソフトウェアの未来を切り拓く開発に貢献したいと考えています。
+          IRCAMのRAVEモデルやMagentaのGANSynthなどの最先端ニューラル音響モデルを、C++ネイティブ環境（JUCE / anira / ONNX Runtime）でプラグイン化する実装力、そして<strong>「理論（数理・AI）を実際のプロダクト（C++ / DAWプラグイン）へ昇華させる力」</strong>を発揮し、音楽・音響ソフトウェアの未来を切り拓く開発に貢献したいと考えています。
         </p>
       </div>
     </div>
