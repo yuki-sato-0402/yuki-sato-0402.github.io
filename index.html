@@ -45,10 +45,10 @@
         <span>⚡ Audio Software &amp; Neural Audio Portfolio</span>
       </div>
       <h1 class="hero-title">
-        Bridging <span class="gradient-text">Music &amp; Technology</span>
+        Yuki Sato <span class="gradient-text">Portfolio</span>
       </h1>
       <p class="hero-desc">
-        一貫して「音楽 × 技術」をテーマに、<strong>音響信号処理 (DSP)</strong>、<strong>オーディオプラグイン開発 (C++ / JUCE / RNBO)</strong>、そして <strong>深層学習 (RAVE, GANSynth, LSTM) のリアルタイム推論</strong> を自ら設計・実装してきました。音響数理からハードウェア連携まで、実際のDAWや楽器演奏で機能する実践的ソフトウェアを開発しています。
+        これまで「音楽 × 技術」をテーマに、<strong>オーディオプラグイン</strong>、<strong>機械学習を応用したシステム</strong>、<strong>Raspberry Pi Picoを用いたMIDIコントローラー</strong>などの個人開発を行ってきました。今後も音楽体験を拡張するプロダクト開発に挑戦していきます。
       </p>
 
       <div class="hero-meta">
@@ -58,7 +58,7 @@
         </div>
         <div class="meta-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-          C++ / JUCE / Python / RNBO
+          JUCE(C++) / Max Msp(RNBO) / Python
         </div>
         <div class="meta-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
@@ -70,34 +70,34 @@
       <div class="recruiter-card">
         <div class="recruiter-header">
           <span class="recruiter-badge">Recruiter's Guide</span>
-          <h2 class="recruiter-title">採用担当者様へ：私が作れるもの・技術的強み</h2>
+          <h2 class="recruiter-title">私が作れるもの・技術的強み</h2>
         </div>
         <div class="recruiter-grid">
           <div class="recruiter-item">
             <h4>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              C++ / JUCE 実装力
+              Max/MSP(gen~) → C++ プラグイン開発
             </h4>
             <p>
-              DAW規格（VST3 / AU / Standalone）に完全準拠したプラグインを開発。リアルタイム制約（オーディオスレッド内でのメモリ確保回避等）やGUIパラメータ管理（APVTS）を熟知しています。
-            </p>
-          </div>
-          <div class="recruiter-item">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
-              AI × リアルタイム音響合成
-            </h4>
-            <p>
-              RAVE (TorchScript) や GANSynth (ONNX) などの最新深層学習モデルを、C++ネイティブ音響エンジン（anira等）へ移植。複素数iFFT等の演算制約をDSP数学と事前計算で解決します。
+              Max/MSP (gen~) 環境を用いてDSPアルゴリズムの開発・音響デザインを行い、それをC++エクスポート（RNBO）してプラグイン化するというのが基本的な開発の流れです。通常のJUCEのみでの開発と異なり、Max/gen~ではバックグラウンドでコードが即座にコンパイルされ、オーディオ再生を止めることなく一瞬で音の変化に反映されるため、試行錯誤やデバッグ・開発のイテレーションを極めて高速に回すことができます。
             </p>
           </div>
           <div class="recruiter-item">
             <h4>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h5l3 7 4-14 3 7h5"/></svg>
-              音響数理 &amp; ハードウェア連携
+              数理モデルの着想 &amp; 音楽的直感
             </h4>
             <p>
-              FFT・Constant-Qフィルタバンク・非対称サチュレーション等の数理DSP設計から、Raspberry Pi Pico（SysEx双方向通信）による実機ノブ操作まで、ソフトと物理をつなぐ実装が可能です。
+              数式やアルゴリズムの原理レベルから深く思考し、それを独自のアイデアとして具体的なシステムや音響機能へ応用することを得意としています。また、音楽を専門的に学んできたバックグラウンドがあるため、単なる工学的な実装にとどまらず、楽器演奏者としての直感的な音の心地よさや音楽的必然性に対する感覚にも確固たる自信を持っています。
+            </p>
+          </div>
+          <div class="recruiter-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+              音響合成・解析への機械学習の応用
+            </h4>
+            <p>
+              通常のDSP処理で事足りる領域に無理に機械学習を使う必要はなく、従来の枠を超えた表現力や、解析においてより高い精度が求められる局面で取り入れるべきと考えています。従来のルールベース処理との最大の違いは、入力に対して出力が非線形（予測不可能）である点です。この創発的な挙動は、芸術的・音楽的な表現を開拓する上で非常に大きな魅力を感じています。
             </p>
           </div>
         </div>
@@ -107,13 +107,12 @@
       <div class="filter-section">
         <div class="filter-label">Filter by Technology</div>
         <div class="tag-filter-list">
-          <button class="filter-btn active" data-filter="all">All Projects <span class="count">15</span></button>
+          <button class="filter-btn active" data-filter="all">All Projects <span class="count">16</span></button>
           <button class="filter-btn" data-filter="featured">⭐️ Featured <span class="count">4</span></button>
           <button class="filter-btn" data-filter="dsp">[ DSP ]</button>
-          <button class="filter-btn" data-filter="juce">[ JUCE ]</button>
-          <button class="filter-btn" data-filter="cpp">[ C++ ]</button>
+          <button class="filter-btn" data-filter="juce">[ JUCE(C++) ]</button>
           <button class="filter-btn" data-filter="ai">[ Deep Learning / AI ]</button>
-          <button class="filter-btn" data-filter="rnbo">[ RNBO ]</button>
+          <button class="filter-btn" data-filter="rnbo">[ Max Msp(RNBO) ]</button>
           <button class="filter-btn" data-filter="python">[ Python ]</button>
           <button class="filter-btn" data-filter="hardware">[ Hardware ]</button>
         </div>
@@ -127,7 +126,7 @@
       <div class="section-header">
         <div class="section-title-wrap">
           <span class="section-subtitle">Core Achievements</span>
-          <h2 class="section-title">Featured Projects (代表作4選)</h2>
+          <h2 class="section-title">Featured Projects</h2>
         </div>
         <a href="#other-projects-section" class="view-all-link" onclick="scrollToAllProjects()">
           View all 15 projects →
@@ -191,7 +190,7 @@
           </h3>
           <ul class="skill-items">
             <li><strong>JUCE Framework</strong>: VST3/AU/Standalone, APVTS, AudioProcessorGraph</li>
-            <li><strong>RNBO (Cycling '74)</strong>: gen~からのC++エクスポートとプラグイン統合</li>
+            <li><strong>Max Msp(RNBO)</strong>: gen~からのC++エクスポートとプラグイン統合</li>
             <li><strong>anira</strong>: 深層学習モデルの低レイテンシーJUCE統合</li>
             <li><strong>ONNX Runtime / LibTorch</strong>: C++ネイティブでのモデル推論</li>
             <li><strong>MIDI Protocol</strong>: SysExメッセージ, クロック同期, MPE</li>

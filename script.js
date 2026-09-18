@@ -34,7 +34,6 @@ function renderCounts() {
   updateBadge("featured", countFeatured);
   updateBadge("dsp", getTagCount("dsp"));
   updateBadge("juce", getTagCount("juce"));
-  updateBadge("cpp", getTagCount("cpp"));
   updateBadge("ai", getTagCount("ai"));
   updateBadge("rnbo", getTagCount("rnbo"));
   updateBadge("python", getTagCount("python"));
@@ -67,9 +66,9 @@ function renderFeaturedProjects(filterTag = "all") {
     return;
   }
 
-  container.innerHTML = filtered.map((project, idx) => {
+  container.innerHTML = filtered.map((project) => {
     const tagsHtml = project.tags
-      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${t}')">[ ${t} ]</button>`)
+      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(t)}')">[ ${escapeHtml(t)} ]</button>`)
       .join("");
 
     const highlightsHtml = project.highlights
@@ -81,6 +80,13 @@ function renderFeaturedProjects(filterTag = "all") {
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
           Demo Video
         </button>`
+      : "";
+
+    const downloadBtn = project.download
+      ? `<a href="${project.download}" target="_blank" rel="noopener noreferrer" class="btn btn-download">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download
+        </a>`
       : "";
 
     const imageHtml = project.image
@@ -132,6 +138,7 @@ function renderFeaturedProjects(filterTag = "all") {
               GitHub Repo
             </a>
             ${youtubeBtn}
+            ${downloadBtn}
           </div>
         </div>
       </article>
@@ -161,13 +168,19 @@ function renderOtherProjects(filterTag = "all") {
 
   container.innerHTML = filtered.map(project => {
     const tagsHtml = project.tags
-      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${t}')">[ ${t} ]</button>`)
+      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(t)}')">[ ${escapeHtml(t)} ]</button>`)
       .join("");
 
     const youtubeBtn = project.youtube
       ? `<button class="btn btn-sm btn-youtube" onclick="openVideoModal('${project.youtube}', '${escapeHtml(project.title)}')">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Demo
         </button>`
+      : "";
+
+    const downloadBtn = project.download
+      ? `<a href="${project.download}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-download">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download
+        </a>`
       : "";
 
     const colabBtn = project.colab
@@ -199,6 +212,7 @@ function renderOtherProjects(filterTag = "all") {
               GitHub
             </a>
             ${youtubeBtn}
+            ${downloadBtn}
             ${colabBtn}
           </div>
         </div>
@@ -225,8 +239,8 @@ function filterByTag(tag) {
   let found = false;
 
   buttons.forEach(btn => {
-    const f = btn.getAttribute("data-filter").toLowerCase();
-    if (f === tag.toLowerCase() || matchTag(tag, f)) {
+    const f = btn.getAttribute("data-filter");
+    if (matchTag(tag, f)) {
       if (!found) {
         btn.classList.add("active");
         found = true;
@@ -278,20 +292,18 @@ function scrollToAllProjects() {
 // Tag matcher
 function matchTag(tagInItem, searchTag) {
   if (!tagInItem || !searchTag) return false;
-  const t = tagInItem.toLowerCase();
-  const s = searchTag.toLowerCase();
+  const t = tagInItem.trim().toLowerCase();
+  const s = searchTag.trim().toLowerCase();
   
   if (s === "all") return true;
-  if (s === "cpp" && (t === "c++" || t === "cpp")) return true;
-  if (s === "c++" && (t === "c++" || t === "cpp")) return true;
-  if (s === "juce" && t === "juce") return true;
-  if (s === "dsp" && (t.includes("dsp") || t.includes("fft") || t.includes("reverb") || t.includes("synth") || t.includes("acoustics") || t.includes("additive") || t.includes("pitch"))) return true;
-  if (s === "ai" && (t.includes("deep learning") || t.includes("ai") || t.includes("lstm") || t.includes("gan") || t.includes("cnn") || t.includes("torch") || t.includes("onnx") || t.includes("rave") || t.includes("music ai"))) return true;
-  if (s === "rnbo" && (t.includes("rnbo") || t.includes("max/msp"))) return true;
+  if (s === "dsp" && t === "dsp") return true;
+  if ((s === "juce" || s === "juce(c++)" || s === "c++" || s === "cpp") && (t === "juce(c++)" || t.includes("juce") || t.includes("c++"))) return true;
+  if ((s === "ai" || s === "deep learning / ai") && (t === "deep learning / ai" || t.includes("deep learning") || t.includes("ai"))) return true;
+  if ((s === "rnbo" || s === "max msp(rnbo)") && (t === "max msp(rnbo)" || t.includes("rnbo") || t.includes("max msp"))) return true;
   if (s === "python" && t === "python") return true;
-  if (s === "hardware" && (t.includes("hardware") || t.includes("pico") || t.includes("sysex"))) return true;
+  if (s === "hardware" && t === "hardware") return true;
 
-  return t === s || t.includes(s) || s.includes(t);
+  return t === s;
 }
 
 // Modal logic for video
