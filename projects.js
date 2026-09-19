@@ -26,7 +26,6 @@ const featuredProjects = [
     tags: ["Max Msp(RNBO)", "JUCE(C++)", "DSP"],
     github: "https://github.com/yuki-sato-0402/RNBO_SinusoidalResynthesis",
     youtube: "https://youtu.be/aMNIJJ8orLw",
-    experimentVideo: "https://youtu.be/aMNIJJ8orLw",
     download: "https://github.com/yuki-sato-0402/RNBO_SinusoidalResynthesis/releases/tag/v1.0.0",
     image: "https://github.com/user-attachments/assets/9e236648-5970-4087-a645-6de2fe0ff68e",
     format: "VST3 / AU / Standalone",
@@ -36,7 +35,7 @@ const featuredProjects = [
     highlights: [
       "上位15本の支配的周波数をリアルタイムに動的トラッキングして加算合成",
       "マイクロトーナル対応：ピーク周波数を任意のN平均律（N-tone Equal Temperament）へ動的にスナップ",
-      "非周期信号の実験：ドラムやノイズを入力することで、予測不能で有機的な音響テクスチャを創出（デモ動画あり）",
+      '非周期信号の実験：ドラムやノイズを入力することで、予測不能で有機的な音響テクスチャを創出（<a href="https://www.youtube.com/watch?v=t7Bpu4GDaww" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;" onclick="event.preventDefault(); openVideoModal(\'https://www.youtube.com/watch?v=t7Bpu4GDaww\', \'RNBO Sinusoidal Resynthesis (ドラム/ノイズ実験デモ)\');">デモ動画あり</a>）',
       "倍音構成のリアルタイム可視化スペクトラムUI"
     ]
   },
