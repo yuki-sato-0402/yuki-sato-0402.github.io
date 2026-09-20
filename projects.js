@@ -172,7 +172,7 @@ const otherProjects = [
     github: "https://github.com/yuki-sato-0402/RNBO_SchroederReverb",
     youtube: "https://youtu.be/FGrxxtUx-4M",
     download: "https://github.com/yuki-sato-0402/RNBO_SchroederReverb/releases/tag/v1.0.0",
-    image: "https://github.com/user-attachments/assets/86647976-46d6-43e5-8b9b-91dd0a3a5f7f",
+    image: "https://github.com/user-attachments/assets/6f1dd2cc-c865-4232-b9e6-616ebaf1326f",
     format: "VST3 / AU / Standalone",
     summary: "4基の並列コムフィルタと2基の直列オールパスフィルタからなる伝統的リバーブアルゴリズムを、Max Msp(RNBO) の gen~ で忠実に再構築。初期反射と密度の高い拡散音響をシミュレート。"
   },
