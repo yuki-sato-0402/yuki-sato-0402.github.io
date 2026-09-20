@@ -185,7 +185,7 @@ function renderOtherProjects(filterTag = "all") {
       : "";
 
     const colabBtn = project.colab
-      ? `<a href="${project.colab}" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">
+      ? `<a href="${project.colab}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-colab">
           Colab
         </a>`
       : "";
