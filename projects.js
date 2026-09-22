@@ -266,7 +266,7 @@ const otherProjects = [
     colab: "https://colab.research.google.com/github/yuki-sato-0402/CNN_Melody_Classifier/blob/main/88midiClassification.ipynb",
     image: "https://github.com/user-attachments/assets/cab47308-7033-4dbc-a25b-cdf88b3e16ac",
     format: "Colab / PyTorch",
-    summary: "SoundFontとFluidSynthを用い、サックスだけでなくGM音源の様々な音色で訓練用音声を自動合成。単音メロディ音声の音高をピアノ88鍵（MIDIノート番号 21〜108）へフレーム単位で高精度に推論分類。",
+    summary: "SoundFontとFluidSynthを用い、GM音源の様々な音色で訓練用音声を自動合成。単音メロディ音声の音高をピアノ88鍵（MIDIノート番号 21〜108）へフレーム単位で高精度に推論分類。",
     summary_en: "Automatically synthesizes multi-instrument training data using SoundFonts and FluidSynth. Predicts and classifies monophonic pitch into 88 discrete key classes (MIDI note numbers 21–108) on a per-frame basis."
   },
   {
