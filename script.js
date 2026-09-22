@@ -1,17 +1,122 @@
 // Application Logic for Yuki Sato Portfolio
+// Supports Japanese & English Bilingual Switching
+
+let currentLang = localStorage.getItem("portfolio_lang") || "ja";
+let currentFilter = "all";
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderCounts();
-  renderFeaturedProjects("all");
-  renderOtherProjects("all");
+  setupLanguageSwitcher();
   setupFilters();
   setupModal();
+  setLanguage(currentLang);
 });
+
+// Setup Language Switcher
+function setupLanguageSwitcher() {
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const lang = btn.getAttribute("data-lang");
+      if (lang && lang !== currentLang) {
+        setLanguage(lang);
+      }
+    });
+  });
+}
+
+function setLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem("portfolio_lang", lang);
+  document.documentElement.lang = lang;
+
+  // Update switcher buttons
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    if (btn.getAttribute("data-lang") === lang) {
+      btn.classList.add("active");
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+
+  // Apply text translations
+  applyTranslations();
+
+  // Render localized skills
+  renderSkills();
+
+  // Re-render project cards
+  renderFeaturedProjects(currentFilter);
+  renderOtherProjects(currentFilter);
+  renderCounts();
+}
+
+function applyTranslations() {
+  const t = translations[currentLang] || translations.ja;
+
+  // Update document title and meta description
+  if (t.page_title) {
+    document.title = t.page_title;
+  }
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && t.meta_desc) {
+    metaDesc.setAttribute("content", t.meta_desc);
+  }
+
+  // Elements with data-i18n (plain text)
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (t[key] !== undefined) {
+      el.textContent = t[key];
+    }
+  });
+
+  // Elements with data-i18n-html (HTML content)
+  document.querySelectorAll("[data-i18n-html]").forEach(el => {
+    const key = el.getAttribute("data-i18n-html");
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
+  });
+}
+
+// Render localized Skills items
+function renderSkills() {
+  const t = translations[currentLang] || translations.ja;
+
+  const langList = document.getElementById("skills-languages-list");
+  if (langList && t.skills_languages_items) {
+    langList.innerHTML = t.skills_languages_items.map(item => `<li>${item}</li>`).join("");
+  }
+
+  const dspList = document.getElementById("skills-dsp-list");
+  if (dspList && t.skills_dsp_items) {
+    const videoDemoHtml = `
+      <li>
+        <strong>${t.skills_video_demo_title}</strong>: ${t.skills_video_demo_desc}
+        <div class="skill-video-links">
+          <button type="button" class="skill-video-btn" onclick="openVideoModal('https://youtu.be/CGfOd3KLMUg', '${t.skills_modal_fir}')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> ${t.skills_btn_fir}
+          </button>
+          <button type="button" class="skill-video-btn" onclick="openVideoModal('https://youtu.be/uNid_z_aXJI', '${t.skills_modal_maclaurin}')">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> ${t.skills_btn_maclaurin}
+          </button>
+        </div>
+      </li>
+    `;
+    dspList.innerHTML = t.skills_dsp_items.map(item => `<li>${item}</li>`).join("") + videoDemoHtml;
+  }
+
+  const mlList = document.getElementById("skills-ml-list");
+  if (mlList && t.skills_ml_items) {
+    mlList.innerHTML = t.skills_ml_items.map(item => `<li>${item}</li>`).join("");
+  }
+}
 
 // Calculate and render badge counts
 function renderCounts() {
   const countAll = allProjects.length;
   const countFeatured = featuredProjects.length;
+  const t = translations[currentLang] || translations.ja;
 
   const getTagCount = (tag) => {
     return allProjects.filter(p => p.tags.some(t => matchTag(t, tag))).length;
@@ -43,7 +148,15 @@ function renderCounts() {
   // Update view all link text
   const viewAllLink = document.querySelector(".view-all-link");
   if (viewAllLink) {
-    viewAllLink.textContent = `View all ${countAll} projects →`;
+    const template = t.view_all_link || "View all {count} projects →";
+    viewAllLink.textContent = template.replace("{count}", countAll);
+  }
+
+  // Update total repositories text in All Works header
+  const otherTotalCount = document.getElementById("other-total-count");
+  if (otherTotalCount) {
+    const template = t.other_total || "Total {count} Repositories";
+    otherTotalCount.textContent = template.replace("{count}", countAll);
   }
 }
 
@@ -51,6 +164,9 @@ function renderCounts() {
 function renderFeaturedProjects(filterTag = "all") {
   const container = document.getElementById("featured-container");
   if (!container) return;
+
+  const t = translations[currentLang] || translations.ja;
+  const isEn = currentLang === "en";
 
   const filtered = featuredProjects.filter(p => {
     if (filterTag === "all" || filterTag === "featured") return true;
@@ -60,33 +176,38 @@ function renderFeaturedProjects(filterTag = "all") {
   if (filtered.length === 0) {
     container.innerHTML = `
       <div style="text-align: center; padding: 40px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-subtle); color: var(--text-dim);">
-        <p style="margin-bottom: 8px;">該当する代表作プロジェクトはありません。</p>
-        <button class="btn btn-sm btn-secondary" onclick="filterByTag('all')">すべてのプロジェクトを表示</button>
+        <p style="margin-bottom: 12px;">${t.no_featured_msg || "該当する代表作プロジェクトはありません。"}</p>
+        <button class="btn btn-sm btn-secondary" onclick="filterByTag('all')">${t.show_all_btn || "すべてのプロジェクトを表示"}</button>
       </div>
     `;
     return;
   }
 
   container.innerHTML = filtered.map((project) => {
+    const subtitle = isEn && project.subtitle_en ? project.subtitle_en : project.subtitle;
+    const whatIsIt = isEn && project.whatIsIt_en ? project.whatIsIt_en : project.whatIsIt;
+    const whySpecial = isEn && project.whySpecial_en ? project.whySpecial_en : project.whySpecial;
+    const highlights = isEn && project.highlights_en ? project.highlights_en : project.highlights;
+
     const tagsHtml = project.tags
-      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(t)}')">[ ${escapeHtml(t)} ]</button>`)
+      .map(tag => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(tag)}')">[ ${escapeHtml(tag)} ]</button>`)
       .join("");
 
-    const highlightsHtml = project.highlights
+    const highlightsHtml = highlights
       .map(h => `<li>${h}</li>`)
       .join("");
 
     const youtubeBtn = project.youtube
       ? `<button class="btn btn-youtube" onclick="openVideoModal('${project.youtube}', '${escapeHtml(project.title)}')">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          Demo Video
+          ${t.btn_demo_video || "Demo Video"}
         </button>`
       : "";
 
     const downloadBtn = project.download
       ? `<a href="${project.download}" target="_blank" rel="noopener noreferrer" class="btn btn-download">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Download
+          ${t.btn_download || "Download"}
         </a>`
       : "";
 
@@ -116,17 +237,17 @@ function renderFeaturedProjects(filterTag = "all") {
               <span class="format-pill">${project.format}</span>
             </div>
             <h3 class="featured-title">${project.title}</h3>
-            <div class="featured-subtitle">${project.subtitle}</div>
+            <div class="featured-subtitle">${subtitle}</div>
             <div class="tag-list">${tagsHtml}</div>
             
-            <p class="featured-desc"><strong>【概要】</strong> ${project.whatIsIt}</p>
+            <p class="featured-desc"><strong>${t.label_overview || "【概要】"}</strong> ${whatIsIt}</p>
             <div class="featured-why">
-              <strong>【実装のポイント &amp; 解決した課題】</strong><br />
-              ${project.whySpecial}
+              <strong>${t.label_why_special || "【実装のポイント &amp; 解決した課題】"}</strong><br />
+              ${whySpecial}
             </div>
             
             <div class="featured-highlights-box">
-              <div class="highlights-title">Technical Highlights</div>
+              <div class="highlights-title">${t.label_tech_highlights || "Technical Highlights"}</div>
               <ul class="highlights-list">
                 ${highlightsHtml}
               </ul>
@@ -136,7 +257,7 @@ function renderFeaturedProjects(filterTag = "all") {
           <div class="featured-actions">
             <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub Repo
+              ${t.btn_github_repo || "GitHub Repo"}
             </a>
             ${youtubeBtn}
             ${downloadBtn}
@@ -152,6 +273,9 @@ function renderOtherProjects(filterTag = "all") {
   const container = document.getElementById("other-container");
   if (!container) return;
 
+  const t = translations[currentLang] || translations.ja;
+  const isEn = currentLang === "en";
+
   const filtered = otherProjects.filter(p => {
     if (filterTag === "all") return true;
     if (filterTag === "featured") return false;
@@ -160,16 +284,19 @@ function renderOtherProjects(filterTag = "all") {
 
   if (filtered.length === 0) {
     if (filterTag === "featured") {
-      container.innerHTML = `<div style="text-align: center; grid-column: 1/-1; padding: 30px; color: var(--text-dim);">代表作のみを表示しています</div>`;
+      container.innerHTML = `<div style="text-align: center; grid-column: 1/-1; padding: 30px; color: var(--text-dim);">${t.showing_featured_only || "代表作のみを表示しています"}</div>`;
     } else {
-      container.innerHTML = `<div style="text-align: center; grid-column: 1/-1; padding: 30px; color: var(--text-dim);">該当するプロジェクトはありません</div>`;
+      container.innerHTML = `<div style="text-align: center; grid-column: 1/-1; padding: 30px; color: var(--text-dim);">${t.no_other_msg || "該当するプロジェクトはありません"}</div>`;
     }
     return;
   }
 
   container.innerHTML = filtered.map(project => {
+    const subtitle = isEn && project.subtitle_en ? project.subtitle_en : project.subtitle;
+    const summary = isEn && project.summary_en ? project.summary_en : project.summary;
+
     const tagsHtml = project.tags
-      .map(t => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(t)}')">[ ${escapeHtml(t)} ]</button>`)
+      .map(tag => `<button type="button" class="tag-badge" onclick="filterByTag('${escapeHtml(tag)}')">[ ${escapeHtml(tag)} ]</button>`)
       .join("");
 
     const youtubeBtn = project.youtube
@@ -180,13 +307,13 @@ function renderOtherProjects(filterTag = "all") {
 
     const downloadBtn = project.download
       ? `<a href="${project.download}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-download">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> ${t.btn_download || "Download"}
         </a>`
       : "";
 
     const colabBtn = project.colab
       ? `<a href="${project.colab}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-colab">
-          Colab
+          ${t.btn_colab || "Colab"}
         </a>`
       : "";
 
@@ -203,9 +330,9 @@ function renderOtherProjects(filterTag = "all") {
           <div class="other-card-header">
             <div class="other-format">${project.format}</div>
             <h4 class="other-title">${project.title}</h4>
-            <div class="other-subtitle">${project.subtitle}</div>
+            <div class="other-subtitle">${subtitle}</div>
             <div class="tag-list">${tagsHtml}</div>
-            <p class="other-summary">${project.summary}</p>
+            <p class="other-summary">${summary}</p>
           </div>
           
           <div class="other-actions">
@@ -266,6 +393,7 @@ function filterByTag(tag) {
 }
 
 function applyFilter(filterTag) {
+  currentFilter = filterTag;
   renderFeaturedProjects(filterTag);
   renderOtherProjects(filterTag);
 
@@ -343,9 +471,11 @@ function openVideoModal(url, title) {
     videoId = url.split("shorts/")[1].split("?")[0];
   }
 
+  const t = translations[currentLang] || translations.ja;
+
   if (videoId) {
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-    titleEl.textContent = title ? `${title} (Demo)` : "Demonstration Video";
+    titleEl.textContent = title ? `${title} (Demo)` : (t.modal_title_default || "Demonstration Video");
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
   } else {

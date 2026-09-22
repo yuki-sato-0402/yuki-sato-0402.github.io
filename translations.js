@@ -1,0 +1,215 @@
+// Internationalization Dictionary (Japanese & English)
+const translations = {
+  ja: {
+    page_title: "Yuki Sato | Portfolio - Music × Technology",
+    meta_desc: "Yuki Sato の就活用ポートフォリオサイト。「音楽 × 技術」を一貫したテーマに、C++/JUCEによるVST3/AUプラグイン開発、音響信号処理(DSP)、RAVEやGANSynth等の深層学習音響合成モデルのリアルタイム実装を手掛けています。",
+    nav_brand_badge: "Music × Tech",
+    nav_featured: "Featured",
+    nav_all: "All Projects",
+    nav_skills: "Skills",
+    nav_about: "About",
+    nav_contact: "Contact",
+    nav_github: "GitHub Profile",
+
+    hero_title: 'Yuki Sato <span class="gradient-text">Portfolio</span>',
+    hero_desc: 'これまで「音楽 × 技術」をテーマに、<strong>オーディオプラグイン</strong>、<strong>機械学習を応用したシステム</strong>、<strong>Raspberry Pi Picoを用いたMIDIコントローラー</strong>などの個人開発を行ってきました。こちらのサイトでは、私がこれまでに開発してきたプロジェクトの概要や、技術的な強み・スキルセットをまとめています。',
+    hero_meta_location: "Japan",
+    hero_meta_stack: "JUCE(C++) / Max Msp(RNBO) / Python",
+    hero_meta_projects: "16 Audio Projects (VST3 / AU)",
+
+    recruiter_badge: "Recruiter's Guide",
+    recruiter_title: "私が作れるもの・技術的強み",
+    recruiter_1_title: "Max/MSP(gen~) → C++ プラグイン開発",
+    recruiter_1_desc: "Max/MSP (gen~) 環境を用いてDSPアルゴリズムの開発・音響デザインを行い、それをC++エクスポート（RNBO）してプラグイン化するというのが基本的な開発の流れです。通常のJUCEのみでの開発と異なり、Max/gen~ではバックグラウンドでコードが即座にコンパイルされ、オーディオ再生を止めることなく一瞬で音の変化に反映されるため、試行錯誤やデバッグ・開発のイテレーションを極めて高速に回すことができます。",
+    recruiter_2_title: "数理モデルの着想 &amp; 音楽的直感",
+    recruiter_2_desc: "数式やアルゴリズムの原理レベルから深く思考し、それを独自のアイデアとして具体的なシステムや音響機能へ応用することを得意としています。また、音楽を専門的に学んできたバックグラウンドがあるため、単なる工学的な実装にとどまらず、楽器演奏者としての直感的な音の心地よさや音楽的必然性に対する感覚にも確固たる自信を持っています。",
+    recruiter_3_title: "音響合成・解析への機械学習の応用",
+    recruiter_3_desc: "通常のDSP処理で事足りる領域に無理に機械学習を使う必要はなく、従来の枠を超えた表現力や、解析においてより高い精度が求められる局面で取り入れるべきと考えています。従来のルールベース処理との最大の違いは、入力に対して出力が非線形（予測不可能）である点です。この創発的な挙動は、芸術的・音楽的な表現を開拓する上で非常に大きな魅力を感じています。",
+
+    filter_label: "Filter by Technology",
+    filter_all: "All Projects",
+    filter_featured: "⭐️ Featured",
+
+    featured_subtitle: "Core Achievements",
+    featured_title: "Featured Projects",
+    view_all_link: "View all {count} projects →",
+
+    other_subtitle: "Archive &amp; Experiments",
+    other_title: "All Works",
+    other_total: "Total {count} Repositories",
+
+    skills_subtitle: "Technical Competence",
+    skills_title: "Skills &amp; Technology Stack",
+    skills_lang_title: "Languages &amp; Frameworks",
+    skills_dsp_title: "DSP &amp; Acoustics",
+    skills_ml_title: "Machine Learning",
+    skills_video_demo_title: "数理実装デモ (YouTube)",
+    skills_video_demo_desc: "gen~環境でFIR filterやマクローリン展開を実装した様子を公開中",
+    skills_btn_fir: "FIR filter 実装",
+    skills_btn_maclaurin: "マクローリン展開 実装",
+    skills_modal_fir: "gen~ FIR filter 実装",
+    skills_modal_maclaurin: "gen~ マクローリン展開 実装",
+
+    skills_languages_items: [
+      "<strong>C++ (JUCE)</strong>: VST3 / AU / Standalone プラグイン開発",
+      "<strong>Python</strong>: 機械学習モデル開発・データセット作成・音響信号前処理パイプライン",
+      "<strong>ONNX (ONNX Runtime)</strong>: 学習済みモデルのC++ネイティブ推論統合",
+      "<strong>anira</strong>: オーディオアプリケーション内でニューラルネットワーク推論を簡単かつ安全にリアルタイムに統合できるように設計された高性能ライブラリ（※RAVE for MIDI Synthesizerでのみ使用）",
+      "<strong>Max/MSP (RNBO)</strong>: Max/MSPのgen~でDSP開発・音響デザインを行い、RNBOというアドオン機能を使ってC++エクスポートを行う"
+    ],
+    skills_dsp_items: [
+      "<strong>スペクトル解析</strong>: FFTでは前後フレームの位相差から瞬時周波数を検出",
+      "<strong>フィルタバンク</strong>: 定Q（Constant-Q）フィルタバンクを用いた鍵盤単位でのエネルギー検出",
+      "<strong>音響合成</strong>: フーリエ級数展開を用いた、サイン波の集合による三角波や矩形波、ノコギリ波の再現／グラニュラー合成",
+      "<strong>非線形音響</strong>: 信号の上昇・下降に応じてフィードバック係数を動的に変更する非対称歪み・Wavefolding",
+      "<strong>空間音響</strong>: シュレーダー・リバーブ（並列コムフィルタ＋直列オールパスフィルタ）"
+    ],
+    skills_ml_items: [
+      "<strong>RAVE (IRCAM)</strong>: VAE（変分オートエンコーダー）をベースとしたリアルタイム音響モデルのTorchScript推論",
+      "<strong>GANSynth (Magenta)</strong>: GAN（敵対的生成ネットワーク）をベースとした音響合成モデルのONNX推論 &amp; Mel-to-Linear逆変換ハイブリッド実装",
+      "<strong>LSTM</strong>: 音楽理論（和声度数）を条件付け情報として埋め込んだメロディ生成・DAW同期セッション",
+      "<strong>CNN</strong>: 音声ピッチ検出・88鍵音高クラス分類によるMIDI自動採譜"
+    ],
+
+    about_subtitle: "Philosophy",
+    about_title: "About Me",
+    about_card_title: "音楽家としての感性と、理論を具現化する探究心",
+    about_p1: "私はこれまで、一貫して<strong>「音楽の演奏・制作体験をテクノロジーでいかに拡張できるか」</strong>を探究し、15本以上の音響プロジェクトを個人開発してきました。",
+    about_p2: "私自身、音楽大学で作曲やサウンドデザインを専門的に学んできたバックグラウンドがあり、根底にあるのは常に「表現者・音楽家としての視点」です。音楽は感性や直感が息づく芸術だからこそ、芸術サイドの感覚と、それを具現化するエンジニアサイドの視点の双方を理解し、両者の架け橋になれることを大切にしています。",
+    about_p3: "ものづくりにおいては、単に既存のライブラリやツールをなぞるのではなく、<strong>「なぜこの数理モデルで音が変化するのか」という音響物理・信号処理（DSP）の根本原理を深く学び、それをどのようにオリジナルのシステムへ組み込むのか</strong>というプロセスを徹底して追求してきました。",
+    about_p4: "音響数理や機械学習といった様々な理論を活用して、<strong>「自分なりの表現力を広げたり、音楽的な課題に対する解決策を切り拓くこと」</strong>を追求し続けています。演奏者や制作者の直感に寄り添い、感性と技術が調和したプロダクト開発に今後も挑戦していきたいと考えています。",
+
+    contact_title: "Contact &amp; Links",
+    contact_lead: "プロジェクトや技術についてのご質問、ご相談などはお気軽にメールまたは各種リンクよりご連絡ください。",
+    contact_email: "yuki.sato.2001@gmail.com",
+    contact_linktree: "Linktree",
+    contact_github: "GitHub Profile",
+
+    footer_github: "GitHub Profile",
+    footer_featured: "Featured",
+    footer_all: "All Works",
+    footer_skills: "Skills",
+    footer_about: "About",
+    footer_contact: "Contact",
+    footer_copy: "&copy; 2026 Yuki Sato. Hosted on GitHub Pages.",
+
+    modal_title_default: "Demonstration Video",
+    btn_github_repo: "GitHub Repo",
+    btn_demo_video: "Demo Video",
+    btn_download: "Download",
+    btn_colab: "Colab",
+    label_overview: "【概要】",
+    label_why_special: "【実装のポイント &amp; 解決した課題】",
+    label_tech_highlights: "Technical Highlights",
+    no_featured_msg: "該当する代表作プロジェクトはありません。",
+    show_all_btn: "すべてのプロジェクトを表示",
+    no_other_msg: "該当するプロジェクトはありません",
+    showing_featured_only: "代表作のみを表示しています"
+  },
+  en: {
+    page_title: "Yuki Sato | Portfolio - Music × Technology",
+    meta_desc: "Portfolio of Yuki Sato. Exploring the intersection of 'Music × Technology' through C++/JUCE audio plugin development, Digital Signal Processing (DSP), and real-time neural audio synthesis (RAVE, GANSynth).",
+    nav_brand_badge: "Music × Tech",
+    nav_featured: "Featured",
+    nav_all: "All Projects",
+    nav_skills: "Skills",
+    nav_about: "About",
+    nav_contact: "Contact",
+    nav_github: "GitHub Profile",
+
+    hero_title: 'Yuki Sato <span class="gradient-text">Portfolio</span>',
+    hero_desc: 'Under the unifying theme of "Music × Technology", I have personally developed <strong>audio plugins</strong>, <strong>machine-learning-driven music systems</strong>, and <strong>hardware MIDI controllers using Raspberry Pi Pico</strong>. This site highlights overviews of my projects, technical strengths, and core skill sets.',
+    hero_meta_location: "Japan",
+    hero_meta_stack: "JUCE(C++) / Max Msp(RNBO) / Python",
+    hero_meta_projects: "16 Audio Projects (VST3 / AU)",
+
+    recruiter_badge: "Recruiter's Guide",
+    recruiter_title: "What I Build &amp; Technical Strengths",
+    recruiter_1_title: "Max/MSP(gen~) → C++ Plugin Development",
+    recruiter_1_desc: "My primary workflow involves prototyping and designing DSP algorithms within Max/MSP (gen~), followed by exporting them to C++ via RNBO to build production-ready plugins. Unlike developing exclusively in JUCE, gen~ compiles code instantaneously in the background and applies changes to the audio stream without interruption. This enables exceptionally rapid acoustic experimentation, debugging, and development iterations.",
+    recruiter_2_title: "Mathematical Inspiration &amp; Musical Intuition",
+    recruiter_2_desc: "I excel at understanding equations and algorithms from fundamental mathematical principles and translating them into original ideas for practical sound design and software systems. Furthermore, with a formal background in music composition, I bring more than just engineering execution—I have deep intuition for acoustic pleasantness, musical necessity, and the natural feel of a playable instrument.",
+    recruiter_3_title: "Applying Machine Learning to Sound Synthesis &amp; Analysis",
+    recruiter_3_desc: "I believe machine learning should not be forced into areas where conventional DSP excels, but rather introduced where non-linear expressiveness or higher analytical precision is genuinely needed. The defining difference from rule-based processing lies in its emergent, non-linear output in response to input. I find this unpredictability immensely compelling for pioneering new forms of artistic and musical expression.",
+
+    filter_label: "Filter by Technology",
+    filter_all: "All Projects",
+    filter_featured: "⭐️ Featured",
+
+    featured_subtitle: "Core Achievements",
+    featured_title: "Featured Projects",
+    view_all_link: "View all {count} projects →",
+
+    other_subtitle: "Archive &amp; Experiments",
+    other_title: "All Works",
+    other_total: "Total {count} Repositories",
+
+    skills_subtitle: "Technical Competence",
+    skills_title: "Skills &amp; Technology Stack",
+    skills_lang_title: "Languages &amp; Frameworks",
+    skills_dsp_title: "DSP &amp; Acoustics",
+    skills_ml_title: "Machine Learning",
+    skills_video_demo_title: "Math Prototyping Demos (YouTube)",
+    skills_video_demo_desc: "Video demonstrations implementing FIR filters and Maclaurin expansions inside gen~",
+    skills_btn_fir: "FIR Filter Implementation",
+    skills_btn_maclaurin: "Maclaurin Series Implementation",
+    skills_modal_fir: "gen~ FIR filter Implementation",
+    skills_modal_maclaurin: "gen~ Maclaurin Series Implementation",
+
+    skills_languages_items: [
+      "<strong>C++ (JUCE)</strong>: VST3 / AU / Standalone audio plugin &amp; software development",
+      "<strong>Python</strong>: ML model training, custom dataset creation, and acoustic DSP pipelines",
+      "<strong>ONNX (ONNX Runtime)</strong>: Native C++ inference integration for trained neural models",
+      "<strong>anira</strong>: High-performance C++ library for safe, real-time neural network inference in audio plugins (utilized in RAVE for MIDI Synthesizer)",
+      "<strong>Max/MSP (RNBO)</strong>: Prototyping DSP and sound design in gen~, exported to optimized C++ via RNBO"
+    ],
+    skills_dsp_items: [
+      "<strong>Spectral Analysis</strong>: Instantaneous frequency detection via phase difference across consecutive FFT frames",
+      "<strong>Filterbanks</strong>: Constant-Q filterbank design for per-key energy detection across keyboard ranges",
+      "<strong>Sound Synthesis</strong>: Fourier series additive reproduction of square, triangle, and sawtooth waves / granular synthesis",
+      "<strong>Non-linear Acoustics</strong>: Asymmetric distortion with slope-adaptive dynamic feedback and wavefolding",
+      "<strong>Spatial Acoustics</strong>: Schroeder reverberators (parallel comb filters and cascaded all-pass networks)"
+    ],
+    skills_ml_items: [
+      "<strong>RAVE (IRCAM)</strong>: Real-time neural audio inference using TorchScript VAE (Variational Autoencoder)",
+      "<strong>GANSynth (Magenta)</strong>: ONNX runtime inference &amp; hybrid Mel-to-linear iFFT time-domain reconstruction",
+      "<strong>LSTM</strong>: Conditioned melody generation using functional harmony degrees with real-time DAW synchronization",
+      "<strong>CNN</strong>: Frame-wise pitch classification across 88 keys for automatic audio-to-MIDI transcription"
+    ],
+
+    about_subtitle: "Philosophy",
+    about_title: "About Me",
+    about_card_title: "Musician's Sensibility &amp; Mathematical Rigor",
+    about_p1: "Throughout my work, I have consistently explored the question: <strong>'How can technology expand the expressive experience of musical performance and creation?'</strong> Driven by this passion, I have personally created over 15 audio and software projects.",
+    about_p2: "Having formally studied music composition and sound design at a music university, my foundation is always anchored in the perspective of a musical artist. Because music is an art form driven by intuition and emotional nuance, I value understanding both the artistic sensibility and the engineering precision required to realize it—bridging the gap between musical imagination and technical implementation.",
+    about_p3: "In software creation, I never settle for simply wrapping existing libraries. Instead, I thoroughly investigate the core physical and mathematical principles of Digital Signal Processing (DSP)—asking <strong>'Why does this mathematical model alter the sound in this specific way?'</strong>—and then architect original systems around those insights.",
+    about_p4: "By leveraging mathematical DSP and machine learning, I continuously strive to <strong>'broaden musical expressiveness and pioneer solutions to creative challenges.'</strong> My aspiration is to build products where artistic intuition and engineering rigor harmonize effortlessly, directly empowering creators and performers.",
+
+    contact_title: "Contact &amp; Links",
+    contact_lead: "For inquiries, feedback, or collaboration regarding my projects and technology, please feel free to reach out via email or the links below.",
+    contact_email: "yuki.sato.2001@gmail.com",
+    contact_linktree: "Linktree",
+    contact_github: "GitHub Profile",
+
+    footer_github: "GitHub Profile",
+    footer_featured: "Featured",
+    footer_all: "All Works",
+    footer_skills: "Skills",
+    footer_about: "About",
+    footer_contact: "Contact",
+    footer_copy: "&copy; 2026 Yuki Sato. Hosted on GitHub Pages.",
+
+    modal_title_default: "Demonstration Video",
+    btn_github_repo: "GitHub Repo",
+    btn_demo_video: "Demo Video",
+    btn_download: "Download",
+    btn_colab: "Colab",
+    label_overview: "[Overview]",
+    label_why_special: "[Key Implementation &amp; Challenges Solved]",
+    label_tech_highlights: "Technical Highlights",
+    no_featured_msg: "No featured projects match this filter.",
+    show_all_btn: "Show all projects",
+    no_other_msg: "No projects match this filter.",
+    showing_featured_only: "Showing featured projects only"
+  }
+};

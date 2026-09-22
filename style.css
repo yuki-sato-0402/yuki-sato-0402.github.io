@@ -124,6 +124,56 @@ body {
   color: var(--text-main);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-switch-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px 5px;
+  gap: 1px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  transition: var(--transition);
+}
+
+.lang-btn:hover {
+  color: var(--text-main);
+}
+
+.lang-btn.active {
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.lang-divider {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  opacity: 0.6;
+  user-select: none;
+  padding: 0 1px;
+}
+
 .nav-github-btn {
   display: inline-flex;
   align-items: center;
@@ -1087,6 +1137,15 @@ body {
   }
   .nav-links {
     display: none;
+  }
+  .nav-actions {
+    gap: 8px;
+  }
+  .nav-github-btn span {
+    display: none;
+  }
+  .nav-github-btn {
+    padding: 7px 10px;
   }
   .recruiter-grid {
     grid-template-columns: 1fr;
