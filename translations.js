@@ -22,7 +22,7 @@ const translations = {
     recruiter_1_title: "Max/MSP(gen~) → C++ プラグイン開発",
     recruiter_1_desc: "Max/MSP (gen~) 環境を用いてDSPアルゴリズムの開発・音響デザインを行い、それをC++エクスポート（RNBO）してプラグイン化するというのが基本的な開発の流れです。通常のJUCEのみでの開発と異なり、Max/gen~ではバックグラウンドでコードが即座にコンパイルされ、オーディオ再生を止めることなく一瞬で音の変化に反映されるため、試行錯誤やデバッグ・開発のイテレーションを極めて高速に回すことができます。",
     recruiter_2_title: "数理モデルの着想 &amp; 音楽的直感",
-    recruiter_2_desc: "数式やアルゴリズムの原理レベルから深く思考し、それを独自のアイデアとして具体的なシステムや音響機能へ応用することを得意としています。また、音楽を専門的に学んできたバックグラウンドがあるため、単なる工学的な実装にとどまらず、楽器演奏者としての直感的な音の心地よさや音楽的必然性に対する感覚にも確固たる自信を持っています。",
+    recruiter_2_desc: "数式やアルゴリズムの原理レベルから深く思考し、それを独自のアイデアとして具体的なシステムや音響機能へ応用することを常に目的として創作を行っています。また、音楽を専門的に学んできたバックグラウンドがあるため、単なる工学的な実装にとどまらず、楽器演奏者としての直感的な音の心地よさや音楽的必然性に対する感覚にも確固たる自信を持っています。",
     recruiter_3_title: "音響合成・解析への機械学習の応用",
     recruiter_3_desc: "通常のDSP処理で事足りる領域に無理に機械学習を使う必要はなく、従来の枠を超えた表現力や、解析においてより高い精度が求められる局面で取り入れるべきと考えています。従来のルールベース処理との最大の違いは、入力に対して出力が非線形（予測不可能）である点です。この創発的な挙動は、芸術的・音楽的な表現を開拓する上で非常に大きな魅力を感じています。",
 
@@ -68,7 +68,7 @@ const translations = {
       "<strong>RAVE (IRCAM)</strong>: VAE（変分オートエンコーダー）をベースとしたリアルタイム音響モデルのTorchScript推論",
       "<strong>GANSynth (Magenta)</strong>: GAN（敵対的生成ネットワーク）をベースとした音響合成モデルのONNX推論 &amp; Mel-to-Linear逆変換ハイブリッド実装",
       "<strong>LSTM</strong>: 音楽理論（和声度数）を条件付け情報として埋め込んだメロディ生成・DAW同期セッション",
-      "<strong>CNN</strong>: 音声ピッチ検出・88鍵音高クラス分類によるMIDI自動採譜"
+      "<strong>CNN</strong>: 音声ピッチ検出・フレーム単位での88鍵音高クラス分類"
     ],
 
     about_subtitle: "Philosophy",
@@ -77,7 +77,7 @@ const translations = {
     about_p1: "私はこれまで、一貫して<strong>「音楽の演奏・制作体験をテクノロジーでいかに拡張できるか」</strong>を探究し、15本以上の音響プロジェクトを個人開発してきました。",
     about_p2: "私自身、音楽大学で作曲やサウンドデザインを専門的に学んできたバックグラウンドがあり、根底にあるのは常に「表現者・音楽家としての視点」です。音楽は感性や直感が息づく芸術だからこそ、芸術サイドの感覚と、それを具現化するエンジニアサイドの視点の双方を理解し、両者の架け橋になれることを大切にしています。",
     about_p3: "ものづくりにおいては、単に既存のライブラリやツールをなぞるのではなく、<strong>「なぜこの数理モデルで音が変化するのか」という音響物理・信号処理（DSP）の根本原理を深く学び、それをどのようにオリジナルのシステムへ組み込むのか</strong>というプロセスを徹底して追求してきました。",
-    about_p4: "音響数理や機械学習といった様々な理論を活用して、<strong>「自分なりの表現力を広げたり、音楽的な課題に対する解決策を切り拓くこと」</strong>を追求し続けています。演奏者や制作者の直感に寄り添い、感性と技術が調和したプロダクト開発に今後も挑戦していきたいと考えています。",
+    about_p4: "音響数理や機械学習といった様々な理論を活用しながら、<strong>「自分らしい表現の幅を広げ、音楽的な課題に対して自分なりの答えを見出していくこと」</strong>を何よりも大切にしています。演奏者や制作者の直感に寄り添い、感性と技術が自然に調和するような心地よいものづくりに、今後も自分らしく向き合っていきたいと考えています。",
 
     contact_title: "Contact &amp; Links",
     contact_lead: "プロジェクトや技術についてのご質問、ご相談などはお気軽にメールまたは各種リンクよりご連絡ください。",
@@ -128,9 +128,9 @@ const translations = {
     recruiter_1_title: "Max/MSP(gen~) → C++ Plugin Development",
     recruiter_1_desc: "My primary workflow involves prototyping and designing DSP algorithms within Max/MSP (gen~), followed by exporting them to C++ via RNBO to build production-ready plugins. Unlike developing exclusively in JUCE, gen~ compiles code instantaneously in the background and applies changes to the audio stream without interruption. This enables exceptionally rapid acoustic experimentation, debugging, and development iterations.",
     recruiter_2_title: "Mathematical Inspiration &amp; Musical Intuition",
-    recruiter_2_desc: "I excel at understanding equations and algorithms from fundamental mathematical principles and translating them into original ideas for practical sound design and software systems. Furthermore, with a formal background in music composition, I bring more than just engineering execution—I have deep intuition for acoustic pleasantness, musical necessity, and the natural feel of a playable instrument.",
+    recruiter_2_desc: "I approach my creative work with the constant aim of deeply exploring mathematical principles and algorithms, translating them into original ideas for practical sound design and software systems. Furthermore, with a formal background in music composition, I bring more than just engineering execution—I have deep intuition for acoustic pleasantness, musical necessity, and the natural feel of a playable instrument.",
     recruiter_3_title: "Applying Machine Learning to Sound Synthesis &amp; Analysis",
-    recruiter_3_desc: "I believe machine learning should not be forced into areas where conventional DSP excels, but rather introduced where non-linear expressiveness or higher analytical precision is genuinely needed. The defining difference from rule-based processing lies in its emergent, non-linear output in response to input. I find this unpredictability immensely compelling for pioneering new forms of artistic and musical expression.",
+    recruiter_3_desc: "I believe machine learning should not be forced into areas where conventional DSP excels, but rather introduced where non-linear expressiveness or higher analytical precision is genuinely needed. The defining difference from rule-based processing lies in its emergent, non-linear output in response to input. I find this unpredictability immensely compelling for exploring new avenues of artistic and musical expression.",
 
     filter_label: "Filter by Technology",
     filter_all: "All Projects",
@@ -167,23 +167,23 @@ const translations = {
       "<strong>Spectral Analysis</strong>: Instantaneous frequency detection via phase difference across consecutive FFT frames",
       "<strong>Filterbanks</strong>: Constant-Q filterbank design for per-key energy detection across keyboard ranges",
       "<strong>Sound Synthesis</strong>: Fourier series additive reproduction of square, triangle, and sawtooth waves / granular synthesis",
-      "<strong>Non-linear Acoustics</strong>: Asymmetric distortion with slope-adaptive dynamic feedback and wavefolding",
+      "<strong>Non-linear Acoustics</strong>: Asymmetric distortion and wavefolding that dynamically modifies feedback coefficients according to whether the signal is rising or falling",
       "<strong>Spatial Acoustics</strong>: Schroeder reverberators (parallel comb filters and cascaded all-pass networks)"
     ],
     skills_ml_items: [
       "<strong>RAVE (IRCAM)</strong>: Real-time neural audio inference using TorchScript VAE (Variational Autoencoder)",
-      "<strong>GANSynth (Magenta)</strong>: ONNX runtime inference &amp; hybrid Mel-to-linear iFFT time-domain reconstruction",
+      "<strong>GANSynth (Magenta)</strong>: Sound synthesis model based on GAN (Generative Adversarial Network) with ONNX runtime inference &amp; hybrid Mel-to-linear iFFT time-domain reconstruction",
       "<strong>LSTM</strong>: Conditioned melody generation using functional harmony degrees with real-time DAW synchronization",
-      "<strong>CNN</strong>: Frame-wise pitch classification across 88 keys for automatic audio-to-MIDI transcription"
+      "<strong>CNN</strong>: Frame-wise pitch detection and classification across 88 keys (MIDI 21–108)"
     ],
 
     about_subtitle: "Philosophy",
     about_title: "About Me",
-    about_card_title: "Musician's Sensibility &amp; Mathematical Rigor",
+    about_card_title: "Musician's Sensibility &amp; Passion to Embody Theory",
     about_p1: "Throughout my work, I have consistently explored the question: <strong>'How can technology expand the expressive experience of musical performance and creation?'</strong> Driven by this passion, I have personally created over 15 audio and software projects.",
     about_p2: "Having formally studied music composition and sound design at a music university, my foundation is always anchored in the perspective of a musical artist. Because music is an art form driven by intuition and emotional nuance, I value understanding both the artistic sensibility and the engineering precision required to realize it—bridging the gap between musical imagination and technical implementation.",
     about_p3: "In software creation, I never settle for simply wrapping existing libraries. Instead, I thoroughly investigate the core physical and mathematical principles of Digital Signal Processing (DSP)—asking <strong>'Why does this mathematical model alter the sound in this specific way?'</strong>—and then architect original systems around those insights.",
-    about_p4: "By leveraging mathematical DSP and machine learning, I continuously strive to <strong>'broaden musical expressiveness and pioneer solutions to creative challenges.'</strong> My aspiration is to build products where artistic intuition and engineering rigor harmonize effortlessly, directly empowering creators and performers.",
+    about_p4: "By leveraging mathematical acoustics and machine learning, what I value most is <strong>'expanding my own palette of expression and discovering personal solutions to musical challenges in my own way.'</strong> Staying close to the intuition of performers and creators, I want to continue pursuing thoughtful development where sensibility and technology harmonize naturally, staying true to my own creative voice.",
 
     contact_title: "Contact &amp; Links",
     contact_lead: "For inquiries, feedback, or collaboration regarding my projects and technology, please feel free to reach out via email or the links below.",

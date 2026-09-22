@@ -128,8 +128,8 @@ const otherProjects = [
     download: "https://github.com/yuki-sato-0402/RNBO_Real-time_Constant-Q_Filterbank/releases/tag/v1.0.0",
     image: "https://github.com/user-attachments/assets/50fd372b-4811-49fc-be41-fe5e8bf1d8b8",
     format: "VST3 / AU / Standalone",
-    summary: "ピアノ全88鍵（A0〜C8）に対応したConstant-QフィルタバンクをMax Msp(RNBO) gen~（Goertzel型相関フィルタ）で実装。低域から高域まで音楽的に自然な解像度でエネルギーを検出。基音と倍音を分離する対策も仕掛けているものの、ポリフォニック検出においては各ピッチの基音と倍音を正確に識別するのが難しく、現在も精度向上を追求している課題作です。",
-    summary_en: "Implemented a Constant-Q filterbank covering all 88 piano keys (A0–C8) using Goertzel-style correlation filters in Max/MSP (RNBO) gen~. Analyzes spectral energy with log-spaced, musically intuitive resolution. While baseline harmonic separation is implemented, precisely isolating fundamentals from overlapping overtones in polyphonic material remains a challenging ongoing research topic."
+    summary: "ピアノ全88鍵（A0〜C8）に対応したConstant-QフィルタバンクをMax Msp(RNBO) gen~で実装。低域から高域まで音楽的に自然な解像度でエネルギーを検出。基音と倍音を分離する対策も仕掛けているものの、ポリフォニック検出においては各ピッチの基音と倍音を正確に識別するのが難しく、現在も精度向上を追求している課題作です。",
+    summary_en: "Implemented a Constant-Q filterbank covering all 88 piano keys (A0–C8) in Max/MSP (RNBO) gen~. Analyzes spectral energy with log-spaced, musically intuitive resolution. While baseline harmonic separation is implemented, precisely isolating fundamentals from overlapping overtones in polyphonic material remains a challenging ongoing research topic."
   },
   {
     id: "juce-pico-bridge",
@@ -239,8 +239,8 @@ const otherProjects = [
     download: "https://github.com/yuki-sato-0402/RNBO_FFT_ModulationFilter/releases/tag/v1.0.0",
     image: "https://github.com/user-attachments/assets/f92c8238-1696-46d4-83ca-5d71eb8bde5c",
     format: "VST3 / AU / Standalone",
-    summary: "FFTの1フレーム（1024サンプル）に対応する周波数窓（86Hz）を三角波やノコギリ波でスペクトル乗算・変調。ホワイトノイズのような比較的全帯域にエネルギーがある信号を入力すると効果的です。",
-    summary_en: "Modulates and multiplies frequency bin windows (approx. 86Hz bins at 1024-sample FFT frames) with triangle and sawtooth waveforms in the frequency domain, excelling at sculpting broad-spectrum noise sources."
+    summary: "信号をFFTで周波数領域に変換した後、三角波やノコギリ波をモジュレーターとして変調することで、カットオフ周波数が動的に変化するフィルターのような音響効果を創出。FFTサイズが1024サンプルの場合、モジュレーターの周波数が約86Hzであれば全周波数領域をぴったりカバーできますが、そこから周波数がずれるとカットオフ周波数がオフセットしていくという独自の挙動を示します。ホワイトノイズなど全帯域にエネルギーを持つ信号で特に顕著な音色変化が得られます。",
+    summary_en: "Transforms the input signal into the frequency domain via FFT and modulates it using triangle or sawtooth waves as modulators, creating a filter-like acoustic effect where the cutoff frequency dynamically shifts. With an FFT frame size of 1024 samples, a modulator frequency of approx. 86Hz perfectly spans the entire frequency range, but deviating from this frequency causes the cutoff frequency to offset in a unique way. It produces especially dramatic timbral sweeps when fed with broad-spectrum signals such as white noise."
   },
   {
     id: "dcgan-synthesizer",
@@ -258,16 +258,16 @@ const otherProjects = [
   {
     id: "cnn-melody-classifier",
     title: "CNN Melody Classifier",
-    subtitle: "単音メロディ音声を88音高クラスへ自動分類・MIDI採譜するCNN",
-    subtitle_en: "Audio Pitch Classifier & Automatic MIDI Transcriber for 88 Keys",
+    subtitle: "単音メロディ音声を88音高クラスへ自動分類するCNN",
+    subtitle_en: "Monophonic Audio Pitch Classifier for 88 Keys",
     tags: ["Machine Learning", "Python"],
     github: "https://github.com/yuki-sato-0402/CNN_Melody_Classifier",
     youtube: null,
     colab: "https://colab.research.google.com/github/yuki-sato-0402/CNN_Melody_Classifier/blob/main/88midiClassification.ipynb",
     image: "https://github.com/user-attachments/assets/cab47308-7033-4dbc-a25b-cdf88b3e16ac",
     format: "Colab / PyTorch",
-    summary: "SoundFontとFluidSynthを用い、サックスだけでなくGM音源の様々な音色で訓練用音声を自動合成。単音メロディ音声の音高を88鍵（MIDI 21〜108）へフレーム単位で推論分類し、MIDIデータへ自動採譜・変換。",
-    summary_en: "Automatically synthesizes multi-instrument training data using SoundFonts and FluidSynth. Predicts monophonic pitch into 88 discrete key classes (MIDI 21–108) per time frame to automatically transcribe audio into MIDI."
+    summary: "SoundFontとFluidSynthを用い、サックスだけでなくGM音源の様々な音色で訓練用音声を自動合成。単音メロディ音声の音高をピアノ88鍵（MIDIノート番号 21〜108）へフレーム単位で高精度に推論分類。",
+    summary_en: "Automatically synthesizes multi-instrument training data using SoundFonts and FluidSynth. Predicts and classifies monophonic pitch into 88 discrete key classes (MIDI note numbers 21–108) on a per-frame basis."
   },
   {
     id: "juce-audioprocessorgraph",
