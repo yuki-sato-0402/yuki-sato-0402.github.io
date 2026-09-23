@@ -1,7 +1,7 @@
 # yuki-sato-0402.github.io
 
-> **Yuki Sato - Audio Software & Neural Audio Portfolio**  
-> 「音楽 × 先端技術（音響信号処理 DSP・深層学習・オーディオプラグイン開発 C++/JUCE/RNBO）」を一貫したテーマとする制作ポートフォリオサイトです。
+> **Yuki Sato Portfolio - Music × Technology**  
+> 音楽大学出身の視点と音響信号処理（DSP）・機械学習・プラグイン開発（C++ / JUCE / RNBO）の技術を融合させた、個人開発オーディオソフトウェアの就活用ポートフォリオサイトです。
 
 🌐 **Live Website**: [https://yuki-sato-0402.github.io/](https://yuki-sato-0402.github.io/)
 
@@ -9,46 +9,45 @@
 
 ## 📌 サイトの構成と特徴
 
-採用担当者や技術面接官が**「10秒で凄さが伝わり、3分で技術の深さが分かる」**ことを目標に設計されています。
+1. **日本語 / 英語のバイリンガル対応（Bilingual Switcher）**:
+   - ヘッダー右上の `JP / EN` トグルにより、ページ全体を瞬時に言語切り替え可能。
+   - プロジェクトの概要、実装のポイントや直面した課題、技術スタック、自己紹介まで全編の日英翻訳を完備。
+   - 選択言語は `localStorage` に保持されます。
 
-1. **Recruiter's Guide（採用担当者向けサマリー）**:
-   - C++ / JUCE によるDAWプラグイン実装力（VST3 / AU / Standalone）
-   - 最先端ニューラル音響モデル（RAVE, GANSynth, LSTM）のリアルタイム推論統合
-   - 音響物理・信号処理（DSP）の数理アルゴリズム設計とハードウェア連携（Raspberry Pi Pico）
-2. **インタラクティブ技術タグフィルター**:
-   - `[ All ]` `[ Featured ]` `[ DSP ]` `[ JUCE ]` `[ C++ ]` `[ Deep Learning / AI ]` `[ RNBO ]` `[ Python ]` `[ Hardware ]`
-   - ワンクリックで目的の技術領域に絞り込んで閲覧可能。
-3. **Featured Projects (代表作4選)**:
-   - [RAVE_for_MIDISynthesizer](https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer)
-   - [RNBO_SinusoidalResynthesis](https://github.com/yuki-sato-0402/RNBO_SinusoidalResynthesis)
-   - [GANSynth_for_MIDISynthesizer](https://github.com/yuki-sato-0402/GANSynth_for_MIDISynthesizer)
-   - [TradingFours_withLSTM](https://github.com/yuki-sato-0402/TradingFours_withLSTM)
-4. **All Works (全16プロジェクトアーカイブ)**:
-   - 「View all 16 projects →」から、これまでの全リポジトリと実験作を俯瞰。
-5. **デモ動画モーダル**:
-   - サイト内で離脱せず直接YouTubeデモ動画を視聴可能。
+2. **クリーン＆カジュアルなUIデザイン**:
+   - 雑貨店やアパレルブランドを思わせる、オフホワイト基調のミニマルで余白を意識したデザイン。
+   - テック感を前面に出しすぎず、読みやすさと心地よさを重視したタイポグラフィとレイアウト。
+
+3. **Recruiter's Guide（私が作れるもの・技術的強み）**:
+   - **Max/MSP(gen~) → C++ プラグイン開発**: 音声を止めることなく即座に音に反映されるgen~環境で高速に試行錯誤し、RNBOによりC++エクスポートしてプラグイン化する開発フロー。
+   - **数理モデルの着想 & 音楽的直感**: 数式原理を独自のアイデアとしてシステムに応用しつつ、音楽専攻出身としての直感的な音の心地よさや音楽的必然性を大切にする姿勢。
+   - **音響合成・解析への機械学習の応用**: 従来のDSP処理と機械学習の役割を整理し、入力に対して非線形な出力が得られる創発的表現や高精度な解析が求められる領域にフォーカス。
+
+4. **インタラクティブ技術タグフィルター**:
+   - `[ All Projects ]` `[ ⭐️ Featured ]` `[ DSP ]` `[ JUCE(C++) ]` `[ Machine Learning ]` `[ Max Msp(RNBO) ]` `[ Python ]` `[ Hardware ]`
+   - 各プロジェクトに付与された技術タグをクリックすることで、該当する作品をリアルタイムに絞り込み可能。
+
+5. **Featured Projects (代表作4選)**:
+   - [RAVE for MIDI Synthesizer](https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer) — IRCAMのニューラル音響モデル「RAVE」を内蔵発振器で駆動し単体MIDI音源化（anira統合 / VST3 / AU）
+   - [RNBO Sinusoidal Resynthesis](https://github.com/yuki-sato-0402/RNBO_SinusoidalResynthesis) — 入力音声の上位15ピークをリアルタイム追従し正弦波加算合成（N平均律スナップ / ノイズ実験デモあり）
+   - [GANSynth for MIDI Synthesizer](https://github.com/yuki-sato-0402/GANSynth_for_MIDISynthesizer) — TensorFlowモデルをONNX変換し、Mel-to-Linear逆変換をハイブリッド実装したオンデマンド音響生成シンセ
+   - [Trading Fours with LSTM](https://github.com/yuki-sato-0402/TradingFours_withLSTM) — 和声度数を埋め込み、DAWと4小節交代でジャズ即興セッションを行うLSTMモデル
+
+6. **All Works (全16プロジェクト アーカイブ)**:
+   - 88鍵Constant-Qフィルタバンク、Raspberry Pi Pico連携SysExコントローラー、フーリエ級数展開シンセ、変拍子メトリックモジュレーション入力ツール、非対称オーバードライブ、リングモジュレーター、シュレーダーリバーブ、CNNピッチ分類器など、多彩な16作品を網羅。
+
+7. **インライン動画モーダル**:
+   - 外部サイトへ離脱することなく、サイト内でYouTubeの動作デモや数理実装動画（FIRフィルタ、マクローリン展開）を直接視聴可能。
+
+8. **Contact & Links**:
+   - メール（`yuki.sato.2001@gmail.com`）、Linktree、GitHub Profileへのダイレクトリンクを設置。
 
 ---
 
-## 🛠️ ローカルでの起動・プレビュー方法
+## 📂 ディレクトリ構成
 
-外部パッケージやビルドツールへの依存はなく、標準的な静的ファイル（HTML / CSS / JavaScript）のみで構築されています。
-
-```bash
-# Pythonの簡易サーバーを起動
-python3 -m http.server 8000
-
-# ブラウザでアクセス
-open http://localhost:8000
-```
-
----
-
-## 🚀 GitHub Pages への公開手順
-
-本リポジトリを GitHub へ Push した後：
-
-1. GitHub リポジトリの **Settings** > **Pages** を開く。
-2. **Build and deployment** の Source で **Deploy from a branch** を選択。
-3. Branch を `main`、フォルダを `/ (root)` に設定して **Save**。
-4. 数分後、`https://yuki-sato-0402.github.io/` にてポートフォリオが世界中に公開されます。
+- `index.html` — セマンティックなHTMLマークアップと各セクション構造
+- `style.css` — オフホワイト基調のクリーン・ライフスタイルUIスタイルシート
+- `projects.js` — 全16プロジェクトのメタデータ（日本語 / 英語データ完全対応）
+- `translations.js` — サイト全体の文言を管理する日英国際化辞書
+- `script.js` — 言語切り替え、技術タグフィルター、YouTube動画モーダル等の動的制御
