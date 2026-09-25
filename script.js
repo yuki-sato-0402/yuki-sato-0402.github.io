@@ -216,14 +216,19 @@ function renderFeaturedProjects(filterTag = "all") {
       : `<div style="color: var(--text-dim); font-size: 0.9rem;">No preview image</div>`;
 
     const playOverlay = project.youtube
-      ? `<button class="youtube-play-btn" onclick="openVideoModal('${project.youtube}', '${escapeHtml(project.title)}')" aria-label="Play Demo Video">
+      ? `<button type="button" class="youtube-play-btn" tabindex="-1" aria-hidden="true" onclick="event.stopPropagation(); openVideoModal('${project.youtube}', '${escapeHtml(project.title)}')" aria-label="Play Demo Video">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         </button>`
       : "";
 
+    const mediaClickAttr = project.youtube
+      ? `onclick="openVideoModal('${project.youtube}', '${escapeHtml(project.title)}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openVideoModal('${project.youtube}', '${escapeHtml(project.title)}');}" role="button" tabindex="0" title="${t.btn_demo_video || "Demo Video"}: ${escapeHtml(project.title)}"`
+      : "";
+    const mediaHasVideoClass = project.youtube ? "has-video" : "";
+
     return `
       <article class="featured-card">
-        <div class="featured-media">
+        <div class="featured-media ${mediaHasVideoClass}" ${mediaClickAttr}>
           ${imageHtml}
           ${playOverlay}
           <div class="featured-media-overlay">

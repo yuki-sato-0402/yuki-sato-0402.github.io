@@ -1,34 +1,5 @@
 const featuredProjects = [
   {
-    id: "rave-synthesizer",
-    title: "RAVE for MIDI Synthesizer",
-    subtitle: "RAVE ニューラル MIDI シンセサイザー",
-    subtitle_en: "RAVE Neural MIDI Synthesizer",
-    tags: ["JUCE(C++)", "Machine Learning", "DSP"],
-    github: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer",
-    youtube: "https://youtu.be/ORYQNKNKJjU",
-    download: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer/releases/tag/v1.0.0-beta",
-    image: "https://github.com/user-attachments/assets/970bc822-9339-4915-863a-82c8aad51d12",
-    format: "VST3 / AU / Standalone",
-    badge: "Featured #1",
-    whatIsIt: "IRCAMのニューラル音響モデル「RAVE (TorchScript)」をJUCEプラグインに組み込み、MIDIキーボードから演奏可能にしたシンセサイザー。",
-    whatIsIt_en: "A standalone/VST3/AU synthesizer integrating IRCAM's neural audio model 'RAVE (TorchScript)' into JUCE, enabling real-time performance directly from a MIDI keyboard.",
-    whySpecial: "従来のRAVEは外部マイク入力が必要でしたが、本プロジェクトではMIDI入力から内部発振器（Sine / Square）を駆動し、自律的に励起信号を生成することで単体MIDI音源化を実現しました。サイン波と矩形波を動的にブレンドすることで、モデル内部に潜在する多様な音響特徴を自在に引き出す狙いがあります。",
-    whySpecial_en: "While standard RAVE models require live microphone input, this project generates its own internal excitation signals (Sine / Square oscillators) driven by incoming MIDI messages, making it an autonomous MIDI instrument. Dynamically blending sine and square waves allows players to stimulate and extract diverse acoustic latent features embedded within the neural model.",
-    highlights: [
-      "サイン波 × 矩形波オシレーターの動的ブレンド：励起信号の倍音を変化させ、RAVEモデルの多彩な音響特徴を励振・抽出",
-      "最大4音ポリフォニック（和音）演奏 & 8次元の潜在変数（Latent Vector）をUIスライダーから操作可能",
-      "aniraライブラリを活用したプラグイン統合と、実行時のモデル動的ロード（.ts切り替え）",
-      "【現状の課題】推論負荷が高く、現状は軽量なv1モデルでないとCore Audioが止まってしまうリスクがあるため、さらなる高速化・負荷低減が課題"
-    ],
-    highlights_en: [
-      "Dynamic Sine × Square oscillator blending: Modulating harmonics in excitation signals to stimulate and uncover rich acoustic features in RAVE",
-      "Up to 4-voice polyphony & real-time control of an 8-dimensional latent vector via GUI sliders",
-      "Plugin integration powered by the anira library, supporting dynamic model hot-swapping (.ts files) at runtime",
-      "[Current Challenge] High inference load: currently requiring the lighter v1 architecture to prevent Core Audio dropouts, making further performance optimization an ongoing goal"
-    ]
-  },
-  {
     id: "rnbo-sinusoidal",
     title: "RNBO Sinusoidal Resynthesis",
     subtitle: "リアルタイム ピーク追従型 正弦波再合成プラグイン",
@@ -84,6 +55,35 @@ const featuredProjects = [
       "Computational optimization: Inferring only every 6 semitones with pitch-shifting interpolation in between to minimize CPU load",
       "Custom export pipeline from TensorFlow freeze-graph to optimized ONNX format",
       "On-demand sample synthesis on 'Generate' button click with seamless audio buffer deployment"
+    ]
+  },
+  {
+    id: "rave-synthesizer",
+    title: "RAVE for MIDI Synthesizer",
+    subtitle: "RAVE ニューラル MIDI シンセサイザー",
+    subtitle_en: "RAVE Neural MIDI Synthesizer",
+    tags: ["JUCE(C++)", "Machine Learning", "DSP"],
+    github: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer",
+    youtube: "https://youtu.be/9vvHGECLLbk?si=rO2Ip5fltGWNeDOh",
+    download: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer/releases/tag/v1.0.0-beta",
+    image: "https://github.com/user-attachments/assets/970bc822-9339-4915-863a-82c8aad51d12",
+    format: "VST3 / AU / Standalone",
+    badge: "Featured #1",
+    whatIsIt: "IRCAMのニューラル音響モデル「RAVE (TorchScript)」をJUCEプラグインに組み込み、MIDIキーボードから演奏可能にしたシンセサイザー。",
+    whatIsIt_en: "A standalone/VST3/AU synthesizer integrating IRCAM's neural audio model 'RAVE (TorchScript)' into JUCE, enabling real-time performance directly from a MIDI keyboard.",
+    whySpecial: "従来のRAVEは外部マイク入力が必要でしたが、本プロジェクトではMIDI入力から内部発振器（Sine / Square）を駆動し、自律的に励起信号を生成することで単体MIDI音源化を実現しました。サイン波と矩形波を動的にブレンドすることで、モデル内部に潜在する多様な音響特徴を自在に引き出す狙いがあります。",
+    whySpecial_en: "While standard RAVE models require live microphone input, this project generates its own internal excitation signals (Sine / Square oscillators) driven by incoming MIDI messages, making it an autonomous MIDI instrument. Dynamically blending sine and square waves allows players to stimulate and extract diverse acoustic latent features embedded within the neural model.",
+    highlights: [
+      "サイン波 × 矩形波オシレーターの動的ブレンド：励起信号の倍音を変化させ、RAVEモデルの多彩な音響特徴を励振・抽出",
+      "最大4音ポリフォニック（和音）演奏 & 8次元の潜在変数（Latent Vector）をUIスライダーから操作可能",
+      "aniraライブラリを活用したプラグイン統合と、実行時のモデル動的ロード（.ts切り替え）",
+      "【現状の課題】推論負荷が高く、現状は軽量なv1モデルでないとCore Audioが止まってしまうリスクがあるため、さらなる高速化・負荷低減が課題"
+    ],
+    highlights_en: [
+      "Dynamic Sine × Square oscillator blending: Modulating harmonics in excitation signals to stimulate and uncover rich acoustic features in RAVE",
+      "Up to 4-voice polyphony & real-time control of an 8-dimensional latent vector via GUI sliders",
+      "Plugin integration powered by the anira library, supporting dynamic model hot-swapping (.ts files) at runtime",
+      "[Current Challenge] High inference load: currently requiring the lighter v1 architecture to prevent Core Audio dropouts, making further performance optimization an ongoing goal"
     ]
   },
   {
