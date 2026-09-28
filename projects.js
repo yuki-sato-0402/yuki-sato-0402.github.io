@@ -65,7 +65,7 @@ const featuredProjects = [
     tags: ["JUCE(C++)", "Machine Learning", "DSP"],
     github: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer",
     youtube: "https://youtu.be/9vvHGECLLbk?si=rO2Ip5fltGWNeDOh",
-    download: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer/releases/tag/v1.0.0-beta",
+    download: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer/releases/tag/v1.0.1",
     image: "https://github.com/user-attachments/assets/970bc822-9339-4915-863a-82c8aad51d12",
     format: "VST3 / AU / Standalone",
     badge: "Featured #1",
@@ -177,14 +177,14 @@ const otherProjects = [
     title: "RNBO Comb Grain",
     subtitle: "グラニュラー合成 × フィードバックディレイ ハイブリッド音響生成",
     subtitle_en: "Granular Synthesis × Feedback Delay Line Hybrid Processor",
-    tags: ["Max Msp(RNBO)", "JUCE(C++)", "DSP"],
+    tags: ["Max Msp(RNBO)", "JUCE(C++)", "DSP", "Hardware"],
     github: "https://github.com/yuki-sato-0402/RNBO_CombGrain",
     youtube: "https://youtu.be/6N8od3bVpZA",
     download: "https://github.com/yuki-sato-0402/RNBO_CombGrain/releases/tag/v1.0.1",
     image: "https://github.com/user-attachments/assets/91930cce-f179-4618-b5ac-eff9e88445af",
-    format: "VST3 / AU / Standalone",
-    summary: "細分化されたグレインをリングバッファとフィードバックディレイラインへ通過させ、メタリックな共鳴や複雑に揺らめくアンビエント音響テクスチャをリアルタイム生成。",
-    summary_en: "Streams fragmented audio grains through circular buffers and feedback delay lines, generating shimmering metallic resonances and complex ambient soundscapes in real time."
+    format: "VST3 / AU / LV2 / Standalone",
+    summary: "細分化されたグレインとフィードバックディレイにより金属的共鳴やアンビエント音響を生成。<a href=\"https://blokas.io/pisound/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline;\">Pisound</a>（Raspberry Pi用AD/DA）上でLV2プラグインとしても実装・実機動作検証（<a href=\"https://youtu.be/wHS8zCHVj5U?si=csgJ6UoxIK249QMT\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline; font-weight: 500;\" onclick=\"event.preventDefault(); openVideoModal('https://youtu.be/wHS8zCHVj5U?si=csgJ6UoxIK249QMT', 'RNBO Comb Grain on Pisound (LV2 実機検証)');\">検証動画</a>）。",
+    summary_en: "Generates metallic resonances and ambient textures via granular synthesis and feedback delays. Also implemented and tested as an LV2 plugin on <a href=\"https://blokas.io/pisound/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline;\">Pisound</a> (Raspberry Pi ADC/DAC) (<a href=\"https://youtu.be/wHS8zCHVj5U?si=csgJ6UoxIK249QMT\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline; font-weight: 500;\" onclick=\"event.preventDefault(); openVideoModal('https://youtu.be/wHS8zCHVj5U?si=csgJ6UoxIK249QMT', 'RNBO Comb Grain on Pisound (LV2 Demo)');\">demo video</a>)."
   },
   {
     id: "rnbo-asymmetric-overdrive",
