@@ -13,7 +13,7 @@ const featuredProjects = [
     badge: "Featured #2",
     whatIsIt: "入力音声をリアルタイムにFFT解析し、振幅の大きい上位15本のピーク周波数成分を動的追従して、15本の独立正弦波で音響を加算合成（Additive Synthesis）するスペクトルエフェクト。",
     whatIsIt_en: "A spectral effect that performs real-time FFT analysis on incoming audio, dynamically tracking the 15 strongest spectral peaks to reconstruct sound using 15 independent sine oscillators via additive synthesis.",
-    whySpecial: "Max Msp(RNBO) の gen~ でDSP数理アルゴリズムを構築し、C++エクスポートを経てJUCEプラグインへ昇華。グラフィックEQのように各ピークのゲインを直感的にスカルプトできます。また、実験としてドラムやノイズ（非周期信号）を入力したところ、通常の楽音とは異なる非常に面白い再合成サウンドが得られました。",
+    whySpecial: "Max Msp(RNBO) の gen~ でDSP数理アルゴリズムを構築し、C++エクスポートを経てJUCEプラグインへ昇華。グラフィックEQのように各ピークのゲインを直感的にコントロールできます。また、実験としてドラムやノイズ（非周期信号）を入力したところ、通常の楽音とは異なる非常に面白い再合成サウンドが得られました。",
     whySpecial_en: "Engineered from mathematical DSP algorithms prototyped in Max/MSP (RNBO) gen~ and exported to C++ for JUCE integration. Users can sculpt individual peak gains intuitively like a graphic EQ. Interestingly, feeding non-periodic signals such as drums or noise yields fascinating, organic synthetic textures far beyond typical pitched sounds.",
     highlights: [
       "上位15本の支配的周波数をリアルタイムに動的トラッキングして加算合成",
