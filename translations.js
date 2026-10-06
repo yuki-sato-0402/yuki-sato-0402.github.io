@@ -24,7 +24,7 @@ const translations = {
     recruiter_2_title: "数理モデルの着想 &amp; 音楽的直感",
     recruiter_2_desc: "数式やアルゴリズムの原理レベルから深く思考し、それを独自のアイデアとして具体的なシステムや音響機能へ応用することを常に目的として創作を行っています。また、音楽を専門的に学んできたバックグラウンドがあるため、単なる工学的な実装にとどまらず、楽器演奏者としての直感的な音の心地よさや音楽的必然性に対する感覚にも確固たる自信を持っています。",
     recruiter_3_title: "音響合成・解析への機械学習の応用",
-    recruiter_3_desc: "通常のDSP処理で事足りる領域に無理に機械学習を使う必要はなく、従来の枠を超えた表現力や、解析においてより高い精度が求められる局面で取り入れるべきと考えています。従来のルールベース処理との最大の違いは、入力に対して出力が非線形（予測不可能）である点です。この創発的な挙動は、芸術的・音楽的な表現を開拓する上で非常に大きな魅力を感じています。",
+    recruiter_3_desc: "従来のDSP処理だけでは音響表現や解析に限界がある場面において、機械学習を取り入れることで従来の枠を超えた表現力や高精度な解析を実現できると考えています。従来のルールベース処理との最大の違いは、入力に対して出力が非線形（予測不可能）である点です。この創発的な挙動は、芸術的・音楽的な表現を開拓する上で非常に大きな魅力を感じています。",
 
     filter_label: "Filter by Technology",
     filter_all: "All Projects",
@@ -130,7 +130,7 @@ const translations = {
     recruiter_2_title: "Mathematical Inspiration &amp; Musical Intuition",
     recruiter_2_desc: "I approach my creative work with the constant aim of deeply exploring mathematical principles and algorithms, translating them into original ideas for practical sound design and software systems. Furthermore, with a formal background in music composition, I bring more than just engineering execution—I have deep intuition for acoustic pleasantness, musical necessity, and the natural feel of a playable instrument.",
     recruiter_3_title: "Applying Machine Learning to Sound Synthesis &amp; Analysis",
-    recruiter_3_desc: "I believe machine learning should not be forced into areas where conventional DSP excels, but rather introduced where non-linear expressiveness or higher analytical precision is genuinely needed. The defining difference from rule-based processing lies in its emergent, non-linear output in response to input. I find this unpredictability immensely compelling for exploring new avenues of artistic and musical expression.",
+    recruiter_3_desc: "While conventional DSP has inherent limits in certain areas of acoustic expression and analysis, introducing machine learning opens up new possibilities with richer expressiveness and higher precision. The defining difference from rule-based processing lies in its emergent, non-linear output in response to input. I find this unpredictability immensely compelling for exploring new avenues of artistic and musical expression.",
 
     filter_label: "Filter by Technology",
     filter_all: "All Projects",
