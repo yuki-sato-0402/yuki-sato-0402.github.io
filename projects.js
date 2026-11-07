@@ -1,5 +1,33 @@
 const featuredProjects = [
   {
+    id: "rnbo-rp2350-bridge",
+    title: "RNBO RP2350 Bridge",
+    subtitle: "Max/MSP (RNBO) のDSPパッチをRaspberry Pi Pico 2上で直接駆動するベアメタル音響基盤",
+    subtitle_en: "Bare-Metal Audio Engine Running Max/MSP (RNBO) DSP Directly on Raspberry Pi Pico 2",
+    tags: ["Max Msp(RNBO)", "DSP", "Hardware"],
+    github: "https://github.com/yuki-sato-0402/RNBO_RP2350_Bridge",
+    youtube: "https://youtu.be/2DyL3gWUIXQ?si=-n7UQzYYklYH6kul",
+    image: "https://github.com/user-attachments/assets/fd768bc3-fe10-452a-84e6-b5565de74e7a",
+    format: "Bare-Metal C++ / RP2350",
+    badge: "Featured #1",
+    whatIsIt: "Cycling '74 Max (RNBO / gen~) で作成したDSPパッチをC++コードとしてエクスポートし、マイコン「Raspberry Pi Pico 2 (RP2350)」上でそのままリアルタイム動作させるベアメタル・ハードウェア音響エフェクトシステム。",
+    whatIsIt_en: "A bare-metal C++ hardware audio system that takes DSP patches created in Cycling '74 Max (RNBO / gen~) and runs them directly in real time on a Raspberry Pi Pico 2 (RP2350) microcontroller.",
+    whySpecial: "最大の特徴は、Max/MSP (RNBO / gen~) で構築したDSPアルゴリズムを、そのままRaspberry Pi Pico 2の実機エフェクターとして使える点にあります。デスクトップ向けのRNBOベアメタルテンプレートをRP2350（ARM Cortex-M33）向けに大幅改修し、単精度FPU（Float32）最適化、520KBの限られたSRAMに収めるTLSFメモリプール設計（256KB）、PIO＋DMAによる32bitフルデュプレックスI2S入出力、さらに外部Pico MIDIコントローラーとのUART双方向連携までを統合しました。",
+    whySpecial_en: "Its defining feature is that DSP algorithms built in Max/MSP (RNBO / gen~) can be used directly on a Raspberry Pi Pico 2 as a standalone hardware effect unit. By heavily adapting the desktop RNBO bare-metal template for the RP2350 (ARM Cortex-M33), this project integrates hardware single-precision FPU (Float32) optimization, a 256 KB TLSF memory pool tailored for the 520 KB SRAM limit, 32-bit full-duplex I2S audio via PIO + DMA, and bi-directional UART MIDI/SysEx control.",
+    highlights: [
+      "Max/MSP (RNBO / gen~) で設計したDSPパッチをC++エクスポートし、そのままPico 2実機上でリアルタイム駆動",
+      "RP2350のハードウェア単精度FPU（Float32）最適化と、256KB TLSFメモリプールによるゼロ動的確保（Zero-Allocation）オーディオ処理",
+      "PIOステートマシンとデュアルDMAを同期させた32-bitフルデュプレックスI2Sオーディオエンジン（PCM1808 ADC / PCM5102A DAC）",
+      "8倍オーバーサンプリング・ヒステリシス・1次LPFスムージングによるノイズレスなアナログゲイン制御 & UART経由の外部Pico MIDIコントローラー双方向連携"
+    ],
+    highlights_en: [
+      "Directly runs DSP patches designed in Max/MSP (RNBO / gen~) on Raspberry Pi Pico 2 in real time via C++ Minimal Export",
+      "Hardware single-precision FPU (Float32) optimization on RP2350 & zero-allocation audio loop backed by a 256 KB TLSF memory pool",
+      "Full-duplex 32-bit I2S audio engine (PCM1808 ADC / PCM5102A DAC) driven by synchronized PIO state machines and dual DMA",
+      "Zipper-noise-free analog potentiometer gain control (8x oversampling, hysteresis, LPF smoothing) & bi-directional UART integration with an external Pico MIDI controller"
+    ]
+  },
+  {
     id: "rnbo-sinusoidal",
     title: "RNBO Sinusoidal Resynthesis",
     subtitle: "リアルタイム ピーク追従型 正弦波再合成プラグイン",
@@ -68,7 +96,7 @@ const featuredProjects = [
     download: "https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer/releases/tag/v1.0.1",
     image: "https://github.com/user-attachments/assets/970bc822-9339-4915-863a-82c8aad51d12",
     format: "VST3 / AU / Standalone",
-    badge: "Featured #1",
+    badge: "Featured #4",
     whatIsIt: "IRCAMのニューラル音響モデル「RAVE (TorchScript)」をJUCEプラグインに組み込み、MIDIキーボードから演奏可能にしたシンセサイザー。",
     whatIsIt_en: "A standalone/VST3/AU synthesizer integrating IRCAM's neural audio model 'RAVE (TorchScript)' into JUCE, enabling real-time performance directly from a MIDI keyboard.",
     whySpecial: "従来のRAVEは外部マイク入力が必要でしたが、本プロジェクトではMIDI入力から内部発振器（Sine / Square）を駆動し、自律的に励起信号を生成することで単体MIDI音源化を実現しました。サイン波と矩形波を動的にブレンドすることで、モデル内部に潜在する多様な音響特徴を自在に引き出す狙いがあります。",
@@ -85,7 +113,10 @@ const featuredProjects = [
       "Plugin integration powered by the anira library, supporting dynamic model hot-swapping (.ts files) at runtime",
       "[Current Challenge] High inference load: currently requiring the lighter v1 architecture to prevent Core Audio dropouts, making further performance optimization an ongoing goal"
     ]
-  },
+  }
+];
+
+const otherProjects = [
   {
     id: "trading-fours-lstm",
     title: "Trading Fours with LSTM",
@@ -96,27 +127,9 @@ const featuredProjects = [
     youtube: "https://youtu.be/k6nYuojO6Ow",
     image: "https://github.com/user-attachments/assets/002714f4-0090-4125-8676-333621eef59a",
     format: "Python App / DAW Sync",
-    badge: "Featured #4",
-    whatIsIt: "コード進行の「和声度数（ディグリー）」を条件付け情報として埋め込み、ジャズの即興演奏のようにコードに調和したメロディを予測・生成するLSTMモデル。",
-    whatIsIt_en: "An LSTM neural network conditioned on harmonic degrees (chord scale degrees) to predict and improvise melodic lines in musical harmony with jazz chord progressions.",
-    whySpecial: "ジャズの演奏スタイル「Trading Fours（4小節交代）」に着想を得て、DAWと同期して人間4小節 → AIが4小節即興応答するインタラクティブな演奏セッションループを構築しました。",
-    whySpecial_en: "Inspired by the classic jazz performance format 'Trading Fours', the system synchronizes with a DAW in real-time, alternating 4-bar improvisations between a human musician and the AI in an interactive performance loop.",
-    highlights: [
-      "音楽理論（機能和声）の応用：絶対音高ではなくコード内での相対的度数をEmbeddingし音楽的文脈を学習",
-      "DAWリアルタイム同期による人間とAIのインタラクティブなセッションモード（4小節交代演奏）",
-      "Temperatureパラメータによる determinism と創造性の連続的コントロール",
-      "【現状の課題】データセットを自作する必要があり、十分な学習データ量を確保することが難しいため、現状はまだ高い予測精度を発揮しきれていない点が課題"
-    ],
-    highlights_en: [
-      "Music theory application: Embedding relative harmonic scale degrees rather than raw absolute pitches to capture functional jazz context",
-      "Real-time DAW synchronization enabling an interactive human-AI jam session (4 bars alternating)",
-      "Continuous control over predictability vs. creativity via sampling temperature adjustment",
-      "[Current Challenge] Dataset limitation: handcrafted training data volume is currently modest, making higher prediction accuracy an active area for enhancement"
-    ]
-  }
-];
-
-const otherProjects = [
+    summary: "コード進行の「和声度数（ディグリー）」を条件付け情報として埋め込み、DAWとリアルタイム同期して人間4小節・AI 4小節で即興メロディを交代演奏（Trading Fours）する対話型LSTMシステム。データセット自作による学習データ量の確保とさらなる予測精度向上が今後の課題。",
+    summary_en: "An interactive LSTM system that embeds functional harmonic scale degrees and synchronizes with a DAW in real time to alternate 4-bar jazz improvisations ('Trading Fours') between human and AI. Expanding the custom training dataset for higher prediction accuracy is an ongoing goal."
+  },
   {
     id: "constant-q-filterbank",
     title: "RNBO Real-time Constant-Q Filterbank",
@@ -284,5 +297,5 @@ const otherProjects = [
   }
 ];
 
-// All 16 projects combined
+// All 17 projects combined
 const allProjects = [...featuredProjects, ...otherProjects];

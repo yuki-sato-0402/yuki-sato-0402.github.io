@@ -28,13 +28,13 @@
    - 各プロジェクトに付与された技術タグをクリックすることで、該当する作品をリアルタイムに絞り込み可能。
 
 5. **Featured Projects (代表作4選)**:
-   - [RAVE for MIDI Synthesizer](https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer) — IRCAMのニューラル音響モデル「RAVE」を内蔵発振器で駆動し単体MIDI音源化（anira統合 / VST3 / AU）
+   - [RNBO RP2350 Bridge](https://github.com/yuki-sato-0402/RNBO_RP2350_Bridge) — Max/MSP (RNBO / gen~) で構築したDSPパッチをC++エクスポートし、Raspberry Pi Pico 2 (RP2350) 実機上でそのままリアルタイム駆動するベアメタル音響基盤
    - [RNBO Sinusoidal Resynthesis](https://github.com/yuki-sato-0402/RNBO_SinusoidalResynthesis) — 入力音声の上位15ピークをリアルタイム追従し正弦波加算合成（N平均律スナップ / ノイズ実験デモあり）
    - [GANSynth for MIDI Synthesizer](https://github.com/yuki-sato-0402/GANSynth_for_MIDISynthesizer) — TensorFlowモデルをONNX変換し、Mel-to-Linear逆変換をハイブリッド実装したオンデマンド音響生成シンセ
-   - [Trading Fours with LSTM](https://github.com/yuki-sato-0402/TradingFours_withLSTM) — 和声度数を埋め込み、DAWと4小節交代でジャズ即興セッションを行うLSTMモデル
+   - [RAVE for MIDI Synthesizer](https://github.com/yuki-sato-0402/RAVE_for_MIDISynthesizer) — IRCAMのニューラル音響モデル「RAVE」を内蔵発振器で駆動し単体MIDI音源化（anira統合 / VST3 / AU）
 
-6. **All Works (全16プロジェクト アーカイブ)**:
-   - 88鍵Constant-Qフィルタバンク、Raspberry Pi Pico連携SysExコントローラー、フーリエ級数展開シンセ、変拍子メトリックモジュレーション入力ツール、非対称オーバードライブ、リングモジュレーター、シュレーダーリバーブ、CNNピッチ分類器など、多彩な16作品を網羅。
+6. **All Works (全17プロジェクト アーカイブ)**:
+   - Trading Fours with LSTM（ジャズ即興4小節交代セッション）、88鍵Constant-Qフィルタバンク、Raspberry Pi Pico連携SysExコントローラー、フーリエ級数展開シンセ、変拍子メトリックモジュレーション入力ツール、非対称オーバードライブ、リングモジュレーター、シュレーダーリバーブ、CNNピッチ分類器など、多彩な17作品を網羅。
 
 7. **インライン動画モーダル**:
    - 外部サイトへ離脱することなく、サイト内でYouTubeの動作デモや数理実装動画（FIRフィルタ、マクローリン展開）を直接視聴可能。
@@ -48,6 +48,6 @@
 
 - `index.html` — セマンティックなHTMLマークアップと各セクション構造
 - `style.css` — オフホワイト基調のクリーン・ライフスタイルUIスタイルシート
-- `projects.js` — 全16プロジェクトのメタデータ（日本語 / 英語データ完全対応）
+- `projects.js` — 全17プロジェクトのメタデータ（日本語 / 英語データ完全対応）
 - `translations.js` — サイト全体の文言を管理する日英国際化辞書
 - `script.js` — 言語切り替え、技術タグフィルター、YouTube動画モーダル等の動的制御
