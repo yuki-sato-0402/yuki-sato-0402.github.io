@@ -10,21 +10,21 @@ const featuredProjects = [
     image: "https://github.com/user-attachments/assets/fd768bc3-fe10-452a-84e6-b5565de74e7a",
     format: "Bare-Metal C++ / RP2350",
     badge: "Featured #1",
-    whatIsIt: "Cycling '74 Max (RNBO / gen~) で作成したDSPパッチをC++コードとしてエクスポートし、マイコン「Raspberry Pi Pico 2 (RP2350)」上でそのままリアルタイム動作させるベアメタル・ハードウェア音響エフェクトシステム。",
-    whatIsIt_en: "A bare-metal C++ hardware audio system that takes DSP patches created in Cycling '74 Max (RNBO / gen~) and runs them directly in real time on a Raspberry Pi Pico 2 (RP2350) microcontroller.",
-    whySpecial: "最大の特徴は、Max/MSP (RNBO / gen~) で構築したDSPアルゴリズムを、そのままRaspberry Pi Pico 2の実機エフェクターとして使える点にあります。デスクトップ向けのRNBOベアメタルテンプレートをRP2350（ARM Cortex-M33）向けに大幅改修し、単精度FPU（Float32）最適化、520KBの限られたSRAMに収めるTLSFメモリプール設計（256KB）、PIO＋DMAによる32bitフルデュプレックスI2S入出力、さらに外部Pico MIDIコントローラーとのUART双方向連携までを統合しました。",
-    whySpecial_en: "Its defining feature is that DSP algorithms built in Max/MSP (RNBO / gen~) can be used directly on a Raspberry Pi Pico 2 as a standalone hardware effect unit. By heavily adapting the desktop RNBO bare-metal template for the RP2350 (ARM Cortex-M33), this project integrates hardware single-precision FPU (Float32) optimization, a 256 KB TLSF memory pool tailored for the 520 KB SRAM limit, 32-bit full-duplex I2S audio via PIO + DMA, and bi-directional UART MIDI/SysEx control.",
+    whatIsIt: "Max Msp(RNBO) の gen~ で作成したDSPパッチをC++コードとしてエクスポートし、Raspberry Pi Pico 2 (RP2350)上でそのままリアルタイム動作させるベアメタル・ハードウェア音響エフェクトシステム。",
+    whatIsIt_en: "A bare-metal C++ hardware audio system that takes DSP patches created in Max/MSP (RNBO) gen~ and runs them directly in real time on Raspberry Pi Pico 2 (RP2350).",
+    whySpecial: "最大の特徴は、Max/MSP (RNBO / gen~) で構築したDSPパッチを指定ディレクトリへエクスポートするだけで、そのままRaspberry Pi Pico 2の実機エフェクターとして使える点にあります。デスクトップ向けのRNBOベアメタルテンプレートをRP2350（ARM Cortex-M33）向けに改修し、単精度FPU（Float32）最適化、520KBの限られたSRAMに収めるTLSFメモリプール設計（256KB）、PIO＋DMAによる32bitフルデュプレックスI2S入出力、さらに外部Pico MIDIコントローラーとのUART双方向連携までを統合しました。",
+    whySpecial_en: "Its defining feature is that simply exporting a DSP patch built in Max/MSP (RNBO / gen~) into the designated directory allows it to run directly on a Raspberry Pi Pico 2 as a standalone hardware effect unit. By adapting the desktop RNBO bare-metal template for the RP2350 (ARM Cortex-M33), this project integrates hardware single-precision FPU (Float32) optimization, a 256 KB TLSF memory pool tailored for the 520 KB SRAM limit, 32-bit full-duplex I2S audio via PIO + DMA, and bi-directional UART MIDI/SysEx control.",
     highlights: [
-      "Max/MSP (RNBO / gen~) で設計したDSPパッチをC++エクスポートし、そのままPico 2実機上でリアルタイム駆動",
+      "Max/MSP (RNBO / gen~) で設計したDSPパッチを指定ディレクトリ（export/）へC++エクスポートするだけで、そのままPico 2実機上でリアルタイム駆動",
       "RP2350のハードウェア単精度FPU（Float32）最適化と、256KB TLSFメモリプールによるゼロ動的確保（Zero-Allocation）オーディオ処理",
       "PIOステートマシンとデュアルDMAを同期させた32-bitフルデュプレックスI2Sオーディオエンジン（PCM1808 ADC / PCM5102A DAC）",
-      "8倍オーバーサンプリング・ヒステリシス・1次LPFスムージングによるノイズレスなアナログゲイン制御 & UART経由の外部Pico MIDIコントローラー双方向連携"
+      "ポテンショメータ（ADC）によるノイズを抑えたアナログ入出力ゲイン制御 & UART経由の外部Pico MIDIコントローラー双方向連携"
     ],
     highlights_en: [
-      "Directly runs DSP patches designed in Max/MSP (RNBO / gen~) on Raspberry Pi Pico 2 in real time via C++ Minimal Export",
+      "Simply export DSP patches designed in Max/MSP (RNBO / gen~) into the designated export/ directory to run them directly on Raspberry Pi Pico 2 in real time",
       "Hardware single-precision FPU (Float32) optimization on RP2350 & zero-allocation audio loop backed by a 256 KB TLSF memory pool",
       "Full-duplex 32-bit I2S audio engine (PCM1808 ADC / PCM5102A DAC) driven by synchronized PIO state machines and dual DMA",
-      "Zipper-noise-free analog potentiometer gain control (8x oversampling, hysteresis, LPF smoothing) & bi-directional UART integration with an external Pico MIDI controller"
+      "Smooth analog input/output gain control via potentiometers (ADC) & bi-directional UART integration with an external Pico MIDI controller"
     ]
   },
   {
