@@ -8,6 +8,7 @@ const featuredProjects = [
     github: "https://github.com/yuki-sato-0402/RNBO_RP2350_Bridge",
     youtube: "https://youtu.be/2DyL3gWUIXQ?si=-n7UQzYYklYH6kul",
     image: "https://github.com/user-attachments/assets/fd768bc3-fe10-452a-84e6-b5565de74e7a",
+    imagePosition: "right center",
     format: "Bare-Metal C++ / RP2350",
     badge: "Featured #1",
     whatIsIt: "Max Msp(RNBO) の gen~ で作成したDSPパッチをC++コードとしてエクスポートし、Raspberry Pi Pico 2 (RP2350)上でそのままリアルタイム動作させるベアメタル・ハードウェア音響エフェクトシステム。",

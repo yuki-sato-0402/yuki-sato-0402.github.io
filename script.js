@@ -211,8 +211,9 @@ function renderFeaturedProjects(filterTag = "all") {
         </a>`
       : "";
 
+    const imgStyle = project.imagePosition ? ` style="object-position: ${escapeHtml(project.imagePosition)};"` : "";
     const imageHtml = project.image
-      ? `<img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy" />`
+      ? `<img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy"${imgStyle} />`
       : `<div style="color: var(--text-dim); font-size: 0.9rem;">No preview image</div>`;
 
     const playOverlay = project.youtube
@@ -322,8 +323,9 @@ function renderOtherProjects(filterTag = "all") {
         </a>`
       : "";
 
+    const imgStyle = project.imagePosition ? ` style="object-position: ${escapeHtml(project.imagePosition)};"` : "";
     const imageHtml = project.image
-      ? `<img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy" />`
+      ? `<img src="${project.image}" alt="${escapeHtml(project.title)}" loading="lazy"${imgStyle} />`
       : `<div style="color: var(--text-dim); font-size: 0.8rem;">No preview</div>`;
 
     return `
