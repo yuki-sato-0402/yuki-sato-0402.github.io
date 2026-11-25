@@ -12,7 +12,7 @@ const translations = {
     nav_github: "GitHub Profile",
 
     hero_title: 'Yuki Sato <span class="gradient-text">Portfolio</span>',
-    hero_desc: 'これまで「音楽 × 技術」をテーマに、<strong>オーディオプラグイン</strong>、<strong>機械学習を応用したシステム</strong>、<strong>Raspberry Pi Picoを用いたMIDIコントローラー</strong>などの個人開発を行ってきました。こちらのサイトでは、私がこれまでに開発してきたプロジェクトの概要や、技術的な強み・スキルセットをまとめています。',
+    hero_desc: 'これまで「音楽 × 技術」をテーマに、<strong>オーディオプラグイン</strong>、<strong>機械学習を応用したシステム</strong>、<strong>Raspberry Pi Picoを用いたDSPユニットやMIDIコントローラー</strong>などの個人開発を行ってきました。こちらのサイトでは、私がこれまでに開発してきたプロジェクトの概要や、技術的な強み・スキルセットをまとめています。',
     hero_meta_location: "Japan",
     hero_meta_stack: "JUCE(C++) / Max Msp(RNBO) / Python",
     hero_meta_projects: "17 Audio Projects (VST3 / AU / HW)",
@@ -118,7 +118,7 @@ const translations = {
     nav_github: "GitHub Profile",
 
     hero_title: 'Yuki Sato <span class="gradient-text">Portfolio</span>',
-    hero_desc: 'Under the unifying theme of "Music × Technology", I have personally developed <strong>audio plugins</strong>, <strong>machine-learning-driven music systems</strong>, and <strong>hardware MIDI controllers using Raspberry Pi Pico</strong>. This site highlights overviews of my projects, technical strengths, and core skill sets.',
+    hero_desc: 'Under the unifying theme of "Music × Technology", I have personally developed <strong>audio plugins</strong>, <strong>machine-learning-driven music systems</strong>, and <strong>hardware DSP units and MIDI controllers using Raspberry Pi Pico</strong>. This site highlights overviews of my projects, technical strengths, and core skill sets.',
     hero_meta_location: "Japan",
     hero_meta_stack: "JUCE(C++) / Max Msp(RNBO) / Python",
     hero_meta_projects: "17 Audio Projects (VST3 / AU / HW)",
