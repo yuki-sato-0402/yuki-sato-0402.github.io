@@ -6,7 +6,7 @@ const featuredProjects = [
     subtitle_en: "Bare-Metal Audio Engine Running Max/MSP (RNBO) DSP Directly on Raspberry Pi Pico 2",
     tags: ["Max Msp(RNBO)", "DSP", "Hardware"],
     github: "https://github.com/yuki-sato-0402/RNBO_RP2350_Bridge",
-    youtube: "https://youtu.be/2DyL3gWUIXQ?si=-n7UQzYYklYH6kul",
+    youtube: "https://youtu.be/bOzm3G3y0JU?si=kZ6FvmSlhLlnlUWd",
     image: "https://github.com/user-attachments/assets/fd768bc3-fe10-452a-84e6-b5565de74e7a",
     imagePosition: "80% center",
     format: "Bare-Metal C++ / RP2350",
