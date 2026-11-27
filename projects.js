@@ -169,8 +169,8 @@ const otherProjects = [
     download: "https://github.com/yuki-sato-0402/RNBO_FourierSeriesExpansionSynthesizer/releases/tag/v1.0.1",
     image: "https://github.com/user-attachments/assets/d86b4108-d3ca-4d50-aa24-77cbcaf8cde5",
     format: "VST3 / AU / Standalone",
-    summary: "矩形波・三角波・ノコギリ波のフーリエ級数展開に基づき、合成に用いる正弦波の項数を連続可変。正負の半波でパラメータを独立制御し、独自の非対称波形と倍音を創出。",
-    summary_en: "Synthesizes square, triangle, and sawtooth waves based on their mathematical Fourier series expansions with continuously variable harmonic terms. Supports independent control of positive and negative half-cycles for asymmetric timbre creation."
+    summary: "矩形波・三角波・ノコギリ波のフーリエ級数展開に基づき、合成に用いる正弦波の項数を連続可変。正負の半波でパラメータを独立制御し、独自の非対称波形と倍音を創出。本アルゴリズムについてはコミュニティ「AMCJ」にて発表実績あり（<a href=\"https://x.com/AMCJ_Official/status/1888469252614836224?a=fku0hJoolHORYI1qfXs&s=20\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline; font-weight: 500;\">発表ポスト</a>）。",
+    summary_en: "Synthesizes square, triangle, and sawtooth waves based on their mathematical Fourier series expansions with continuously variable harmonic terms. Supports independent control of positive and negative half-cycles for asymmetric timbre creation. The underlying algorithm was presented at the AMCJ community (<a href=\"https://x.com/AMCJ_Official/status/1888469252614836224?a=fku0hJoolHORYI1qfXs&s=20\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: var(--accent-warm, #8c7355); text-decoration: underline; font-weight: 500;\">event post</a>)."
   },
   {
     id: "juce-metric-tap",
